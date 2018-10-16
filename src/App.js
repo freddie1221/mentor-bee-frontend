@@ -4,6 +4,7 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
+import bee from './bee.svg';
 import SignIn from "./SignIn";
 import Register from "./Register";
 
@@ -22,6 +23,9 @@ class App extends Component {
           <div className="content">
             <Route exact path="/" component={SignIn}/>
             <Route path="/register" component={Register}/>
+          </div>
+          <div>
+          <img src={bee} className="App-logo" alt="logo" />
           </div>
         </div>
       </HashRouter>
