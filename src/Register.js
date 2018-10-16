@@ -59,7 +59,11 @@ class Register extends Component {
             onChange={this.handleChange}
             required
           /><br/>
-        <input type="submit" value="Submit" />
+          
+          <div className="clearfix">
+            <button type="button" className="cancelbtn">Cancel</button>
+            <button type="submit" className="signupbtn">Sign Up</button>
+          </div>
       </form>
     );
   }

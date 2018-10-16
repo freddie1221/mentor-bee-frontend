@@ -43,7 +43,9 @@ class SignIn extends Component {
             onChange={this.handleChange}
             required
           /><br/>
-        <input type="submit" value="Submit" />
+          <div className="clearfix">
+            <button type="submit" className="signinbtn">Submit</button>
+          </div>
       </form>
     );
   }
