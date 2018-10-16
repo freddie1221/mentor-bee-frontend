@@ -36,7 +36,7 @@ class Register extends Component {
             required
           /><br/>
           <input
-            type="text"
+            type="email"
             name="email"
             placeholder="Email"
             value={this.state.email}
@@ -44,7 +44,7 @@ class Register extends Component {
             required
           /><br/>
           <input
-            type="text"
+            type="password"
             name="password"
             placeholder="Password"
             value={this.state.password}
@@ -52,7 +52,7 @@ class Register extends Component {
             required
           /><br/>
           <input
-            type="text"
+            type="password"
             name="passwordConfirmation"
             placeholder="Re-enter password"
             value={this.state.passwordConfirmation}
