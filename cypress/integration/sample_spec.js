@@ -9,19 +9,20 @@ describe('visit homepage', function() {
   it('loads the registration page when register is clicked', function() {
     cy.visit('localhost:3000/#')
     cy.contains('Register').click()
-    cy.contains('Please register here')
+    cy.contains('Name:')
   })
 })
 
-describe('sign in component', function(){
+describe('Register component', function(){
   it('has the expected fields', function() {
     cy.visit('localhost:3000/#')
     cy.contains('Register').click()
-    cy.contains('Name')
-    cy.contains('Email')
-    cy.contains('Password')
-    cy.contains('Password confirmation')
+    cy.contains('Name:')
+    cy.contains('Email:')
+    cy.contains('Password:')
+    cy.contains('Password confirmation:')
   })
+  
 
 })
 
