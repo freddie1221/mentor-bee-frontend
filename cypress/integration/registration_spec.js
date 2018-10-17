@@ -1,19 +1,19 @@
-
-
 describe('visit homepage', function() {
   it('visits homepage', function() {
     cy.visit('localhost:3000/#')
-    cy.contains('Sign in')
-    cy.contains('Register')
+    cy.get(".clearfix")
+    cy.should("contain", "Submit")
   })
   it('loads the registration page when register is clicked', function() {
     cy.visit('localhost:3000/#')
     cy.contains('Register').click()
+    cy.get(".clearfix")
+    cy.should("contain", "Sign Up")
   })
 })
 
 describe('Register component', function(){
-  it('has the expected fields', function() {
+  it('redirects to /mentors on submission', function() {
     cy.visit('localhost:3000/#')
     cy.contains('Register').click()
     cy.get('form').within(($form) => {
@@ -22,7 +22,7 @@ describe('Register component', function(){
       cy.get('input[name="password"]').type('password')
       cy.get('input[name="passwordConfirmation"]').type('password')
       cy.root().submit()
+      cy.url().should("include", "/mentors");
     })
   })
-    
 })

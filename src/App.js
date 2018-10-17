@@ -7,6 +7,7 @@ import {
 import bee from './bee.svg';
 import SignIn from "./SignIn";
 import Register from "./Register";
+import AllMentors from "./AllMentors";
 
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
           <div className="content">
             <Route exact path="/" component={SignIn}/>
             <Route path="/register" component={Register}/>
+            <Route path="/mentors" component={AllMentors}/>
           </div>
        
         </div>
