@@ -1,6 +1,7 @@
 .card {
   border: 1px solid #2e2d2d;
   margin: 3px;
+  background: rgb(248, 248, 248);
 }
 
 .profile-pic {
