@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './form.css';
+import './all-mentors.css';
+import './mentor-box.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

@@ -7,9 +7,35 @@ class AllMentors extends Component {
 
     this.state = {
       mentors: [
-        {"id":1,"name":"Newt Scamander","email":"brookswolf@wiza.io", "pic":"https://t4.ftcdn.net/jpg/02/15/84/43/240_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"},
-        {"id":2,"name":"Vernon Dursley","email":"monnie@gorczany.biz", "pic":"https://t4.ftcdn.net/jpg/02/15/84/43/240_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"}
-        ]
+        {
+          "id":1,
+          "name":"Newt Scamander",
+          "email":"brookswolf@wiza.io", 
+          "pic":"https://randomuser.me/api/portraits/men/22.jpg",
+          "skills":"Dancing, React, Baking"
+        },
+        {
+          "id":2,
+          "name":"Vernon Dursley",
+          "email":"monnie@gorczany.biz", 
+          "pic":"https://randomuser.me/api/portraits/men/72.jpg",
+          "skills":"Accounting, Maths, Guitar"
+        },
+        {
+          "id":1,
+          "name":"Newt Scamander",
+          "email":"brookswolf@wiza.io", 
+          "pic":"https://randomuser.me/api/portraits/men/22.jpg",
+          "skills":"Dancing, React, Baking"
+        },
+        {
+          "id":1,
+          "name":"Newt Scamander",
+          "email":"brookswolf@wiza.io", 
+          "pic":"https://randomuser.me/api/portraits/men/22.jpg",
+          "skills":"Dancing, React, Baking"
+        }
+      ]
     }
   }
 

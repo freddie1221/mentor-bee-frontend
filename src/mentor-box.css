@@ -1,0 +1,27 @@
+.card {
+  border: 1px solid #2e2d2d;
+  margin: 3px;
+}
+
+.profile-pic {
+  width: 100%;
+}
+
+.card-name {
+  margin-left: 6px;
+  margin-top: 1px;
+  font-weight: bold;
+}
+
+.card-skills {
+  margin-left: 6px;
+  margin-right: 6px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.skills-title {
+  font-size: 0.8em;
+  font-weight: 300;
+  display: block;
+}
