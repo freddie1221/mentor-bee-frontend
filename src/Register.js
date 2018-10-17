@@ -36,7 +36,7 @@ class Register extends Component {
             required
           /><br/>
           <input
-            type="text"
+            type="email"
             name="email"
             placeholder="Email"
             value={this.state.email}
@@ -44,7 +44,7 @@ class Register extends Component {
             required
           /><br/>
           <input
-            type="text"
+            type="password"
             name="password"
             placeholder="Password"
             value={this.state.password}
@@ -52,14 +52,18 @@ class Register extends Component {
             required
           /><br/>
           <input
-            type="text"
+            type="password"
             name="passwordConfirmation"
             placeholder="Re-enter password"
             value={this.state.passwordConfirmation}
             onChange={this.handleChange}
             required
           /><br/>
-        <input type="submit" value="Submit" />
+          
+          <div className="clearfix">
+            <button type="button" className="cancelbtn">Cancel</button>
+            <button type="submit" className="signupbtn">Sign Up</button>
+          </div>
       </form>
     );
   }
@@ -69,23 +73,3 @@ class Register extends Component {
 
 export default Register;
 
-/* <select value={this.state.value} onChange={this.handleChange}>
-<option value="grapefruit">Grapefruit</option>
-<option value="lime">Lime</option>
-<option value="coconut">Coconut</option>
-<option value="mango">Mango</option>
-</select> */
-
-
-
-{/* <Form model={model} onChange={model => this.setState({model})} onSubmit={model => this.setState({selected: model})}>
-<Field name="title" label="Title"/>
-<Field name="category" label="Category"/>
-<Field name="books.selected" type="select" label="Book">
-  <option value="">Select....</option>
-  <option value="one">One</option>
-  <option value="two">Two</option>
-  <option value="three">Three</option>
-</Field>
-<button type="submit">Submit</button>
-</Form> */}

@@ -9,7 +9,6 @@ describe('visit homepage', function() {
   it('loads the registration page when register is clicked', function() {
     cy.visit('localhost:3000/#')
     cy.contains('Register').click()
-    cy.contains('Name:')
   })
 })
 
@@ -17,15 +16,13 @@ describe('Register component', function(){
   it('has the expected fields', function() {
     cy.visit('localhost:3000/#')
     cy.contains('Register').click()
-    cy.contains('Name:')
-    cy.contains('Email:')
-    cy.contains('Password:')
-    cy.contains('Password confirmation:')
+    cy.get('form').within(($form) => {
+      cy.get('input[name="name"]').type('Freddie')
+      cy.get('input[name="email"]').type('john.doe@email.com')
+      cy.get('input[name="password"]').type('password')
+      cy.get('input[name="passwordConfirmation"]').type('password')
+      cy.root().submit()
+    })
   })
-  
-
-})
-
-describe('sign in form', function() {
-
+    
 })
