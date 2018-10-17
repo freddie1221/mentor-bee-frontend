@@ -1,12 +1,14 @@
 describe('visit homepage', function() {
   it('visits homepage', function() {
     cy.visit('localhost:3000/#')
-    cy.contains('Sign in')
-    cy.contains('Register')
+    cy.get(".clearfix")
+    cy.should("contain", "Submit")
   })
   it('loads the registration page when register is clicked', function() {
     cy.visit('localhost:3000/#')
     cy.contains('Register').click()
+    cy.get(".clearfix")
+    cy.should("contain", "Sign Up")
   })
 })
 

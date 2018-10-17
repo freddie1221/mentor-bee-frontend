@@ -61,7 +61,7 @@ class Register extends Component {
             onChange={this.handleChange}
             required
           /><br/>
-          
+
           <div className="clearfix">
             <button type="button" className="cancelbtn">Cancel</button>
             <button type="submit" className="signupbtn">Sign Up</button>
@@ -74,4 +74,3 @@ class Register extends Component {
 
 
 export default withRouter(Register);
-
