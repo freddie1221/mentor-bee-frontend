@@ -5,6 +5,5 @@ cache:
   directories:
   - node_modules
 script:
-  - npm start
   - npm test
   - npm run build
