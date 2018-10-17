@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 class Register extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class Register extends Component {
   }
   handleSubmit(event) {
     // TODO connect to API
+    this.props.history.push("/mentors");
     event.preventDefault()
   }
 
@@ -71,5 +73,5 @@ class Register extends Component {
 
 
 
-export default Register;
+export default withRouter(Register);
 
