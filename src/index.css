@@ -23,7 +23,7 @@ ul.header li a {
   display: inline-block;
 }
 .content {
-  background-color: rgb(250, 250, 250);
+  background-color: #FFCC00;
   padding: 20px;
 }
 .content h2 {

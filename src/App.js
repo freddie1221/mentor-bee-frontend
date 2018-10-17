@@ -20,21 +20,17 @@ class App extends Component {
             <img src={bee} className="App-logo" alt="logo" />
           </div>
           <ul className="header">
-            <li><NavLink exact to="/">Sign in</NavLink></li>
-            <li><NavLink to="/register">Register</NavLink></li>
-            
+            <li><NavLink exact to="/">Register</NavLink></li>
+            <li><NavLink to="/mentors">Mentors</NavLink></li>
           </ul>
           <div className="content">
-            <Route exact path="/" component={SignIn}/>
-            <Route path="/register" component={Register}/>
+            <Route exact path="/" component={Register}/>
             <Route path="/mentors" component={AllMentors}/>
           </div>
-       
+
         </div>
       </HashRouter>
     );
   }
 }
 export default App;
-
-
