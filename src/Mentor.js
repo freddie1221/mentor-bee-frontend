@@ -1,5 +1,4 @@
 import React from "react";
-import ProfilePage from "./ProfilePage";
 
 class Mentor extends React.Component {
   render() {
