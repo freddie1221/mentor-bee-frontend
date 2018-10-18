@@ -15,8 +15,6 @@ class ProfilePage extends React.Component {
 
     const url = `https://mentor-bee.herokuapp.com/users/${idString}`
 
-    console.log(url)
-
     fetch(url)
     .then(response => {
       return response.json()

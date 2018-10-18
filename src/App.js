@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {
   Route,
   NavLink,
-  HashRouter,
+  HashRouter
 } from "react-router-dom";
 import bee from './bee.svg';
 import Register from "./Register";
