@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.5.2",
+    "react-advanced-form": "^1.5.1",
     "react-dom": "^16.5.2",
+    "react-favicon": "0.0.14",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "./node_modules/.bin/cypress open",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -21,5 +25,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "axios-mock-adapter": "^1.15.0",
+    "cypress": "^3.1.0",
+    "react-testing-library": "^5.2.0"
+  }
 }
