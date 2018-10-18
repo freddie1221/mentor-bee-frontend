@@ -20,7 +20,7 @@ class Register extends Component {
     })
   }
   handleSubmit(event) {
-    const url = "https://mentor-bee.herokuapp.com/users"
+    const url = "https://mentor-bee-api.herokuapp.com/users"
     const data = { "user": {
       "name": this.state.name,
       "email": this.state.email,
