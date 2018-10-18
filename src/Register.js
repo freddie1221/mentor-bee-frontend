@@ -28,45 +28,43 @@ class Register extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={this.state.name}
-            onChange={this.handleChange}
-            required
-          /><br/>
+      <div className="clearfix">
+        <form onSubmit={this.handleSubmit}>
           <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleChange}
-            required
-          /><br/>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            required
-          /><br/>
-          <input
-            type="password"
-            name="passwordConfirmation"
-            placeholder="Re-enter password"
-            value={this.state.passwordConfirmation}
-            onChange={this.handleChange}
-            required
-          /><br/>
-
-          <div className="clearfix">
-            <button type="button" className="cancelbtn">Cancel</button>
-            <button type="submit" className="signupbtn">Sign Up</button>
-          </div>
-      </form>
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={this.state.name}
+              onChange={this.handleChange}
+              required
+            /><br/>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              required
+            /><br/>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.handleChange}
+              required
+            /><br/>
+            <input
+              type="password"
+              name="passwordConfirmation"
+              placeholder="Re-enter password"
+              value={this.state.passwordConfirmation}
+              onChange={this.handleChange}
+              required
+            /><br/>
+              <button type="submit" className="signupbtn">Sign Up</button>
+        </form>
+      </div>
     );
   }
 }
