@@ -6,48 +6,20 @@ class AllMentors extends Component {
     super(props)
 
     this.state = {
-      mentors: [
-        {
-          "id":1,
-          "name":"Newt Scamander",
-          "email":"brookswolf@wiza.io", 
-          "pic":"https://randomuser.me/api/portraits/men/22.jpg",
-          "skills":"Dancing, React, Baking"
-        },
-        {
-          "id":2,
-          "name":"Vernon Dursley",
-          "email":"monnie@gorczany.biz", 
-          "pic":"https://randomuser.me/api/portraits/men/72.jpg",
-          "skills":"Accounting, Maths, Guitar"
-        },
-        {
-          "id":1,
-          "name":"Newt Scamander",
-          "email":"brookswolf@wiza.io", 
-          "pic":"https://randomuser.me/api/portraits/men/22.jpg",
-          "skills":"Dancing, React, Baking"
-        },
-        {
-          "id":1,
-          "name":"Newt Scamander",
-          "email":"brookswolf@wiza.io", 
-          "pic":"https://randomuser.me/api/portraits/men/22.jpg",
-          "skills":"Dancing, React, Baking"
-        }
-      ]
+      mentors: []
     }
   }
 
   componentDidMount() {
-    // fetch("https://mentor-bee.herokuapp.com/users")
-    // .then(response => {
-    //   return response.json()
-    // }).then(data => {
-    //   this.setState({
-    //     mentors: data
-    //   })
-    // })
+    const url = "https://mentor-bee.herokuapp.com/users"
+    fetch(url)
+    .then(response => {
+      return response.json()
+    }).then(data => {
+      this.setState({
+        mentors: data
+      })
+    })
   }
 
   render() {
