@@ -32,11 +32,18 @@ class ProfilePage extends React.Component {
 
     const name = this.state.mentor.name
     const pic = this.state.mentor.pic
+    const email = this.state.mentor.email 
 
     return (
       <div>
         <h2>{name}'s Profile</h2>
         <img alt="profile-pic" src={pic}></img>
+        <p>{name} is available to mentor in the following areas:</p>
+        <ul>
+          <li>This</li>
+          <li>That</li>
+        </ul>
+        <p className="email">Contact: {email}</p>
       </div>
     )
   }
