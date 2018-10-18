@@ -29,6 +29,7 @@
   "devDependencies": {
     "axios-mock-adapter": "^1.15.0",
     "cypress": "^3.1.0",
+    "cypress-react-unit-test": "^1.2.1",
     "react-testing-library": "^5.2.0"
   }
 }
