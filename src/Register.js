@@ -8,8 +8,7 @@ class Register extends Component {
     this.state = {
       name: '',
       email: '',
-      password: '',
-      passwordConfirmation:''
+      password: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -21,7 +20,27 @@ class Register extends Component {
     })
   }
   handleSubmit(event) {
-    // TODO connect to API
+    const url = "https://mentor-bee.herokuapp.com/users"
+    const data = { "user": {
+      "name": this.state.name,
+      "email": this.state.email,
+      "password": this.state.password
+      }
+    }
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(res => {
+      if (res.ok){
+        return res.json()
+      } else {
+        throw new Error ("Error: unable to register")
+      }
+    })
+
     this.props.history.push("/mentors");
     event.preventDefault()
   }
@@ -51,14 +70,6 @@ class Register extends Component {
               name="password"
               placeholder="Password"
               value={this.state.password}
-              onChange={this.handleChange}
-              required
-            /><br/>
-            <input
-              type="password"
-              name="passwordConfirmation"
-              placeholder="Re-enter password"
-              value={this.state.passwordConfirmation}
               onChange={this.handleChange}
               required
             /><br/>
