@@ -13,7 +13,7 @@ class ProfilePage extends React.Component {
     const address = this.props.location.pathname
     const idString = address.split("mentors/")[1]
 
-    const url = `https://mentor-bee.herokuapp.com/users/${idString}`
+    const url = `https://mentor-bee-api.herokuapp.com/users/${idString}`
 
     fetch(url)
     .then(response => {
@@ -24,7 +24,6 @@ class ProfilePage extends React.Component {
       })
     })
   }
-
 
   render() {
 
