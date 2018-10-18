@@ -9,7 +9,7 @@ class Mentor extends React.Component {
     return (
       <div>
         <div className="card">
-          <img className="profile-pic" src={pic}></img>
+          <img alt="profile-pic" className="profile-pic" src={pic}></img>
           <p className="card-name">{name}</p>
           <p className="card-skills"><span className="skills-title">Available to mentor in:</span> {skills}</p>
         </div>

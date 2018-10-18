@@ -5,7 +5,6 @@ import {
   HashRouter
 } from "react-router-dom";
 import bee from './bee.svg';
-import SignIn from "./SignIn";
 import Register from "./Register";
 import AllMentors from "./AllMentors";
 
