@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import {
   Route,
   NavLink,
-  HashRouter
+  HashRouter,
 } from "react-router-dom";
 import bee from './bee.svg';
 import Register from "./Register";
 import AllMentors from "./AllMentors";
-
+import ProfilePage from "./ProfilePage";
 
 class App extends Component {
   render() {
@@ -24,7 +24,8 @@ class App extends Component {
           </ul>
           <div className="content">
             <Route exact path="/" component={Register}/>
-            <Route path="/mentors" component={AllMentors}/>
+            <Route exact path="/mentors" component={AllMentors}/>
+            <Route path="/mentors/:id" component={ProfilePage}/>
           </div>
 
         </div>
