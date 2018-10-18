@@ -8,5 +8,4 @@ cache:
 install:
   - npm ci
 script:
-  - $ npm start
   - $(npm bin)/cypress run
