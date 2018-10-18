@@ -4,12 +4,6 @@ describe('visit homepage', function() {
     cy.get(".clearfix")
     cy.should("contain", "Sign Up")
   })
-  // it('loads the registration page when register is clicked', function() {
-  //   cy.visit('localhost:3000/#')
-  //   cy.contains('Register').click()
-  //   cy.get(".clearfix")
-  //   cy.should("contain", "Sign Up")
-  // })
 })
 
 describe('Register component', function(){
