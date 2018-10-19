@@ -12,4 +12,9 @@ describe('/profile', function() {
     cy.get(".profile-wrapper")
     cy.should("contain", "Become a mentee")
   })
+
+  it('when mentor button is clicked', function() {
+    cy.contains("Become a mentor").click()
+    cy.window()
+  });
 })
