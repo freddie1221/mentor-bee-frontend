@@ -11,7 +11,7 @@ class AllMentors extends Component {
   }
 
   componentDidMount() {
-    const url = "https://mentor-bee.herokuapp.com/users"
+    const url = "https://mentor-bee-api.herokuapp.com/users"
     fetch(url)
     .then(response => {
       return response.json()
