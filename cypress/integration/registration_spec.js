@@ -20,7 +20,6 @@ describe('Register component', function(){
       cy.get('input[name="name"]').type('Freddie')
       cy.get('input[name="email"]').type('john.doe@email.com')
       cy.get('input[name="password"]').type('password')
-      cy.get('input[name="passwordConfirmation"]').type('password')
       cy.root().submit()
       cy.url().should("include", "/mentors");
     })
