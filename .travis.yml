@@ -3,7 +3,14 @@ node_js:
   - "stable"
 cache:
   directories:
-  - node_modules
+    - ~/.npm
+    - ~/.cache
+    - node_modules
+install:
+  - npm ci
+
+before_script:
+  - npm start --silent &
+
 script:
-  - npm test
-  - npm run build
+  - $(npm bin)/cypress run
