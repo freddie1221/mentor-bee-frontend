@@ -1,4 +1,4 @@
-# Mentor-Bee API
+# Mentor-Bee
 
 ### Find the perfect mentor.
 
@@ -27,3 +27,18 @@ Launch site
 $ npm start
 ```
 
+### Run the Tests
+
+##### Tested using Cypress. 
+
+To run the tests, first start the server:
+```
+npm start
+```
+
+Then whilst the server is still running:
+```
+npm test
+```
+
+This will launch Cypress in a new window. 
