@@ -5,11 +5,12 @@ cache:
   directories:
     - ~/.npm
     - ~/.cache
+    - node_modules
 install:
   - npm ci
 
 before_script:
   - npm start --silent &
-  
+
 script:
   - $(npm bin)/cypress run
