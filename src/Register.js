@@ -50,7 +50,7 @@ class Register extends Component {
       <div className="clearfix">
       <div className="title-box">
         <h3 id="signup-title">Welcome to MentorBee.</h3>
-        <p id="tagline">Learn the skills you need by experts in the field. <br/>Register with us to learn from the best!</p>
+        <p id="tagline">Learn the skills you need from experts in the field. <br/>Register with us to learn from the best!</p>
       </div>
         <form onSubmit={this.handleSubmit}>
           <label for="name">Name</label>
