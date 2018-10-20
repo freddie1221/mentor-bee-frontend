@@ -1,6 +1,8 @@
 .card-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 200px));
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
   width: 70%;
   margin: 0 auto;
 }
