@@ -6,7 +6,7 @@
 input[type=text], input[type=email], input[type=password] {
   width: 100%;
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin: 2% 0 6% 0;
   display: inline-block;
   border: none;
   background: rgb(239, 240, 234);
@@ -34,12 +34,14 @@ hr {
   font-size: 1.8em;
   font-weight: 400;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .clearfix p {
   margin-top: 1%;
   font-weight: lighter;
   margin-bottom: 6%;
+  text-align: center;
 }
 
 button {
@@ -64,10 +66,14 @@ button:hover {
 }
 
 .clearfix {
-  width: 50%;
-  margin: 10% auto;
+  width: 30%;
+  margin: 4% auto;
   border-radius: 8px;
-  padding: 1%;
+  padding: 0;
+}
+
+.title-box {
+  grid-column: 1 / 2;
 }
 
 .margin {
