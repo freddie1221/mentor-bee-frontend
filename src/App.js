@@ -14,11 +14,9 @@ class App extends Component {
     return (
       <HashRouter>
         <div>
-          <h1>Mentor Bee</h1>
-          <div className="bee">
-            <img src={bee} className="App-logo" alt="logo" />
-          </div>
           <ul className="header">
+            <h1 id="nav-title">MentorBee</h1>
+            <img src={bee} className="App-logo" alt="logo" />
             <li><NavLink exact to="/">Register</NavLink></li>
             <li><NavLink to="/mentors">Mentors</NavLink></li>
           </ul>
