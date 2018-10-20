@@ -1,8 +1,9 @@
 body {
-  background-color: #F6F7EB;
+  background-color: rgb(239, 240, 234);
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
+
 ul.header li {
   display: inline;
   list-style-type: none;
@@ -19,6 +20,7 @@ ul.header {
   font-family: 'Satisfy', cursive;
   color: #F6F7EB;
 }
+
 ul.header li a {
   color: #FFF;
   text-decoration: none;
@@ -32,7 +34,8 @@ ul.header li a:active {
 }
 
 .content {
-  padding: 20px;
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(500px, 1200px));
 }
 .content h2 {
   padding: 0;
@@ -57,6 +60,7 @@ h1 {
   width: 20px;
   display: inline;
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
