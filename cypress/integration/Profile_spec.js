@@ -1,7 +1,7 @@
 describe('/profile', function() {
 
   beforeEach(function(){
-    cy.visit("localhost:3000/#/profile")
+    cy.visit('/#/profile')
   })
 
   it('become a mentor buutton', function() {

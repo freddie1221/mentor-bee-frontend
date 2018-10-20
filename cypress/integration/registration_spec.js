@@ -1,6 +1,6 @@
 describe('visit homepage', function() {
   it('visits homepage', function() {
-    cy.visit('localhost:3000/#')
+    cy.visit('/')
     cy.get(".clearfix")
     cy.should("contain", "Sign Up")
   })
@@ -8,7 +8,7 @@ describe('visit homepage', function() {
 
 describe('Register component', function(){
   it('redirects to /mentors on submission', function() {
-    cy.visit('localhost:3000/#')
+    cy.visit('/')
     cy.contains('Register').click()
     cy.get('form').within(($form) => {
       cy.get('input[name="name"]').type('Freddie')

@@ -1,6 +1,6 @@
 describe('navigation', function() {
   beforeEach(function(){
-    cy.visit("localhost:3000")
+    cy.visit('/')
   })
   describe('profile button', function() {
     it('can take you to profile page', function() {
