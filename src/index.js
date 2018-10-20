@@ -4,6 +4,7 @@ import './index.css';
 import './form.css';
 import './all-mentors.css';
 import './mentor-box.css';
+import './profilePage.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

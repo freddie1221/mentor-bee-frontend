@@ -29,18 +29,27 @@ class ProfilePage extends React.Component {
 
     const name = this.state.mentor.name
     const pic = this.state.mentor.pic
-    const email = this.state.mentor.email 
+    const email = this.state.mentor.email
+    const mailto = `mailto:${email}` 
 
     return (
-      <div>
-        <h2>{name}'s Profile</h2>
-        <img alt="profile-pic" src={pic}></img>
-        <p>{name} is available to mentor in the following areas:</p>
-        <ul>
-          <li>This</li>
-          <li>That</li>
-        </ul>
-        <p className="email">Contact: {email}</p>
+      <div className="profile-wrapper">
+        <p className="profile-title">{name}'s Profile</p>
+        <img className="profile-pic" alt="profile-pic" src={pic}></img>
+        <div className="profile-body">
+          <p className="subtitle"> About</p>
+          <p>{name} is available to mentor in the following areas:</p>
+          <ul>
+            <li>This</li>
+            <li>That</li>
+          </ul>
+          <form method="post" action={mailto}>
+            <button>Contact</button>
+          </form>
+          <form>
+            <button id="book-btn">Book</button>
+          </form>
+        </div>
       </div>
     )
   }
