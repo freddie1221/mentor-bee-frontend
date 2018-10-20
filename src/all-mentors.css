@@ -4,3 +4,9 @@
   width: 70%;
   margin: 0 auto;
 }
+
+#title {
+  text-align: center;
+  color: rgb(29, 29, 29);
+  font-weight: 400;
+}
