@@ -40,7 +40,7 @@ class Register extends Component {
         throw new Error ("Error: unable to register")
       }
     })
-
+    
     this.props.history.push("/mentors");
     event.preventDefault()
   }
