@@ -1,6 +1,7 @@
-function CurrentUser(name, email) {
+function CurrentUser(name, email, token) {
   this._name = name;
   this._email = email;
+  this._token = token;
 }
   
 CurrentUser.prototype.getName = function() {
@@ -17,6 +18,14 @@ CurrentUser.prototype.getEmail = function() {
 
 CurrentUser.prototype.setEmail = function(updatedEmail) {
   this._email = updatedEmail
+}
+
+CurrentUser.prototype.getToken = function() {
+  return this._token;
+}
+
+CurrentUser.prototype.setToken = function(updatedToken) {
+  this._token = updatedToken;
 }
 
 module.exports = CurrentUser;
