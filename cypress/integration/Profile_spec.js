@@ -13,8 +13,4 @@ describe('/profile', function() {
     cy.should("contain", "Become a mentee")
   })
 
-  it('when mentor button is clicked', function() {
-    cy.contains("Become a mentor").click()
-    cy.contains('Enter your bio')
-  });
 })

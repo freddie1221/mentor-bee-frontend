@@ -16,7 +16,6 @@ class Profile extends Component {
     this.mentee = this.mentee.bind(this)
   }
   
-
   mentor() {
     this.setState({
       mentorForm: <MentorRegistration />,
@@ -30,7 +29,6 @@ class Profile extends Component {
       mentorForm: ''
     })
   }
-
 
   render () {
     return (
@@ -46,7 +44,6 @@ class Profile extends Component {
       </div>
     )
   }
-
 }
 
 export default Profile;
