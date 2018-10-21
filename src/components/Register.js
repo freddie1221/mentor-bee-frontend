@@ -48,27 +48,32 @@ class Register extends Component {
   render() {
     return (
       <div className="clearfix">
+      <div className="title-box">
+        <h3 id="signup-title">Welcome to MentorBee.</h3>
+        <p id="tagline">Learn the skills you need from experts in the field. <br/>Register with us to learn from the best!</p>
+      </div>
         <form onSubmit={this.handleSubmit}>
+          <label for="name">Name</label>
           <input
               type="text"
               name="name"
-              placeholder="Name"
               value={this.state.name}
               onChange={this.handleChange}
               required
+              autoFocus
             /><br/>
+            <label for="email">Email</label>
             <input
               type="email"
               name="email"
-              placeholder="Email"
               value={this.state.email}
               onChange={this.handleChange}
               required
             /><br/>
+            <label for="password">Password</label>
             <input
               type="password"
               name="password"
-              placeholder="Password"
               value={this.state.password}
               onChange={this.handleChange}
               required
