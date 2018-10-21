@@ -15,6 +15,6 @@ describe('/profile', function() {
 
   it('when mentor button is clicked', function() {
     cy.contains("Become a mentor").click()
-    cy.window()
+    cy.contains('Enter your bio')
   });
 })
