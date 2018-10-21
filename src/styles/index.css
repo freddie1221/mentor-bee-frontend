@@ -11,6 +11,10 @@ ul.header li {
   float: right;
 }
 
+#profile-nav {
+  margin-top: 4px;
+}
+
 ul.header {
   margin: 0;
   background-color: #F3B700;

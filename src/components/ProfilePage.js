@@ -33,7 +33,7 @@ class ProfilePage extends React.Component {
     const mailto = `mailto:${email}` 
 
     return (
-      <div className="profile-wrapper">
+      <div className="profilePage-wrapper">
         <p className="profile-title">{name}'s Profile</p>
         <img className="profile-pic" alt="profile-pic" src={pic}></img>
         <div className="profile-body">

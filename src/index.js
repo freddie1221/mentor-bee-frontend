@@ -5,6 +5,7 @@ import './styles/form.css';
 import './styles/all-mentors.css';
 import './styles/mentor-box.css';
 import './styles/profilePage.css';
+import './styles/profile-creation.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
