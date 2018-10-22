@@ -5,6 +5,7 @@ import {
   HashRouter
 } from "react-router-dom";
 import Register from "./Register";
+import SignIn from "./SignIn";
 import AllMentors from "./AllMentors";
 import ProfilePage from "./ProfilePage";
 import Profile from "./Profile";

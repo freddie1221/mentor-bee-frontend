@@ -2,3 +2,10 @@
   width: 30%;
   margin: 5% auto;
 }
+
+.profile-form-wrapper {
+  width: 100%;
+  margin: 4% auto;
+  border-radius: 8px;
+  padding: 0;
+}
