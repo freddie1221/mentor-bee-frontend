@@ -29,9 +29,9 @@ $ npm start
 
 ### Run the Tests
 
-##### Tested using Cypress. 
+##### Tested using Cypress and Jasmine. 
 
-To run the tests, first start the server:
+To run the Cypress tests, first start the server:
 ```
 npm start
 ```
@@ -42,3 +42,8 @@ npm test
 ```
 
 This will launch Cypress in a new window. 
+
+###### To run the Jasmine tests:
+```
+jasmine
+```
