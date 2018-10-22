@@ -9,9 +9,10 @@ import bee from '../bee.svg';
 class NavSignedIn extends Component {
 
 
-  logOut() {
-    window.localStorage.clear()
-  }
+  // logOut() {
+  //   console.log("Being called!")
+  //   window.localStorage.clear()
+  // }
 
 
   render() {
@@ -19,7 +20,7 @@ class NavSignedIn extends Component {
       <ul className="header">
           <h1 id="nav-title">MentorBee</h1>
           <img src={bee} className="App-logo" alt="logo" />
-          <li onClick={this.logOut()}><NavLink to="/sign-in">Sign out</NavLink></li>
+          {/* <li onClick={this.logOut()}><NavLink to="/sign-in">Sign out</NavLink></li> */}
           <li id="profile-nav"><NavLink to="/profile">Profile</NavLink></li>
           <li><NavLink to="/mentors">Mentors</NavLink></li>
       </ul>
