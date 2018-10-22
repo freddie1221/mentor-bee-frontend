@@ -36,12 +36,13 @@ class Register extends Component {
     }).then(res => {
       if (res.ok){
         return res.json()
-      } else {
-        throw new Error ("Error: unable to register")
-      }
-    })
+      } 
+    }).then(res => {
+      this.props.history.push("/mentors");
+    }).catch(err => {
+        console.log(err)
+    });
 
-    this.props.history.push("/mentors");
     event.preventDefault()
   }
 
