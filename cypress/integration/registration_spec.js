@@ -17,5 +17,5 @@ describe('Register component', function(){
       cy.root().submit()
       cy.url().should("include", "/mentors");
     })
-  })
+  }) 
 })
