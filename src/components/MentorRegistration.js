@@ -1,18 +1,16 @@
 import React, { Component } from "react";
 
-class SignIn extends Component {
+class MentorRegistration extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      email: '',
-      password: '',
-    }
+      bio: '',
+      skill: '',
 
+    }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-
   handleChange(event) {
     const target = event.target
     this.setState({
@@ -20,40 +18,35 @@ class SignIn extends Component {
     })
   }
   handleSubmit(event) {
-    // TODO connect to API
-    event.preventDefault()
+    console.log("Handling submit")
   }
 
   render() {
     return (
-      <div className="clearfix">
-        <div className="title-box">
-          <h3 id="signup-title">Welcome to MentorBee.</h3>
-          <br/><p id="tagline">Please sign in</p>
-        </div>
+      <div className="profile-form-wrapper">
         <form onSubmit={this.handleSubmit}>
+          <label for="name">Bio</label>
+          <input
+              type="text"
+              name="bio"
+              value={this.state.name}
+              onChange={this.handleChange}
+              required
+              autoFocus
+            /><br/>
+            <label for="skill">Skill</label>
             <input
               type="text"
-              name="email"
-              placeholder="Email"
+              name="skill"
               value={this.state.email}
               onChange={this.handleChange}
               required
             /><br/>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={this.state.password}
-              onChange={this.handleChange}
-              required
-            /><br/>
-              <button type="submit" className="signupbtn">Sign in</button>
+            <button type="submit" className="signupbtn">Submit</button>
         </form>
       </div>
     );
   }
 }
 
-
-export default SignIn;
+export default MentorRegistration
