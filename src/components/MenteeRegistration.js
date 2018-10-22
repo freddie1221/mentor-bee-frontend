@@ -23,7 +23,7 @@ class MenteeRegistration extends Component {
 
   render() {
     return (
-      <div className="clearfix">
+      <div className="profile-form-wrapper">
         <form onSubmit={this.handleSubmit}>
           <label for="name">Bio</label>
           <input

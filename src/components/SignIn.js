@@ -26,27 +26,31 @@ class SignIn extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleChange}
-            required
-          /><br/>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            required
-          /><br/>
-          <div className="clearfix">
-            <button type="submit" className="signinbtn">Submit</button>
-          </div>
-      </form>
+      <div className="clearfix">
+        <div className="title-box">
+          <h3 id="signup-title">Welcome to MentorBee.</h3>
+          <br/><p id="tagline">Please sign in</p>
+        </div>
+        <form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              required
+            /><br/>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.handleChange}
+              required
+            /><br/>
+              <button type="submit" className="signupbtn">Sign in</button>
+        </form>
+      </div>
     );
   }
 }
