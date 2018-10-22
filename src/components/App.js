@@ -21,6 +21,7 @@ class App extends Component {
     this.returnNav = this.returnNav.bind(this)
   }
 
+
   returnNav() {
     if (this.state.isSignedIn) {
       return <NavSignedIn />
@@ -39,6 +40,7 @@ class App extends Component {
             <Route exact path="/mentors" component={AllMentors} onEnter={() => this.returnNav()}/>
             <Route path="/mentors/:id" component={ProfilePage}/>
             <Route path="/profile" component={Profile}/>
+            <Route path="/sign-in" component={SignIn}/>
           </div>
         </div>
       </HashRouter>
