@@ -20,7 +20,7 @@ class Register extends Component {
     })
   }
   handleSubmit(event) {
-    const url = "https://mentor-bee.herokuapp.com/users"
+    const url = "https://mentor-bee-api.herokuapp.com/users"
     const data = { "user": {
       "name": this.state.name,
       "email": this.state.email,
@@ -30,18 +30,17 @@ class Register extends Component {
     fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      }
+      headers: { "Content-Type": "application/json" }
     }).then(res => {
       if (res.ok){
         return res.json()
-      } else {
-        throw new Error ("Error: unable to register")
-      }
-    })
+      } 
+    }).then(res => {
+      this.props.history.push("/mentors");
+    }).catch(err => {
+        console.log(err)
+    });
 
-    this.props.history.push("/mentors");
     event.preventDefault()
   }
 
@@ -84,7 +83,5 @@ class Register extends Component {
     );
   }
 }
-
-
 
 export default withRouter(Register);
