@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import CurrentUser from "../CurrentUser"
 
 class Register extends Component {
   constructor(props) {
@@ -34,13 +35,15 @@ class Register extends Component {
     }).then(res => {
       if (res.ok){
         return res.json()
-      } 
+      }
     }).then(res => {
+      let user = new CurrentUser(res.name, res.email)
+      window.localStorage.setItem("currentUser", JSON.stringify(user))
       this.props.history.push("/mentors");
     }).catch(err => {
-        console.log(err)
-    });
-
+      console.log(err)
+    })
+    
     event.preventDefault()
   }
 
