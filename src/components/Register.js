@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import CurrentUser from "../CurrentUser"
 
 class Register extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Register extends Component {
     })
   }
   handleSubmit(event) {
-    const url = "https://mentor-bee.herokuapp.com/users"
+    const url = "https://mentor-bee-api.herokuapp.com/users"
     const data = { "user": {
       "name": this.state.name,
       "email": this.state.email,
@@ -30,18 +31,21 @@ class Register extends Component {
     fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      }
+      headers: { "Content-Type": "application/json" }
     }).then(res => {
       if (res.ok){
         return res.json()
-      } else {
-        throw new Error ("Error: unable to register")
       }
+    }).then(res => {
+      // create new CurrentUser with JSON Name, email
+      let user = new CurrentUser(res.name, res.email)
+      // store CurrentUser on localStorage
+      window.localStorage.setItem("currentUser", JSON.stringify(user))
+      this.props.history.push("/mentors");
+    }).catch(err => {
+      console.log(err)
     })
     
-    this.props.history.push("/mentors");
     event.preventDefault()
   }
 
