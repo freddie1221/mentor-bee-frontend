@@ -21,13 +21,11 @@ class SignIn extends Component {
     })
   }
   handleSubmit(event) {
-    // TODO connect to API
-
     const url = "https://mentor-bee-api.herokuapp.com/login"
     const data = {
       "email": this.state.email,
       "password": this.state.password
-      }
+    }
     
     fetch(url, {
       method: "POST",
