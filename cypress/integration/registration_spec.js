@@ -7,11 +7,7 @@ describe('visit homepage', function() {
 })
 
 describe('Register component', function(){
-<<<<<<< HEAD
-  it.skip('redirects to /mentors on submission', function() {
-=======
   it('can submit form', function() {
->>>>>>> development
     cy.visit('/')
     cy.contains('Register').click()
     cy.get('form').within(($form) => {
