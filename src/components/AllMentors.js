@@ -6,19 +6,31 @@ class AllMentors extends Component {
     super(props)
 
     this.state = {
-      mentors: []
+      mentors: [],
+      currentUser: JSON.parse(window.localStorage.getItem("currentUser"))
     }
   }
 
   componentDidMount() {
-    const url = "https://mentor-bee-api.herokuapp.com/users"
-    fetch(url)
+
+    console.log(this.state.currentUser)
+
+    const url = "https://mentor-bee-api.herokuapp.com/mentors"
+    fetch(url, {
+      headers: {
+        "Authorization": this.state.currentUser._token,
+        "Content-Type": "application/json"
+      }
+    })
     .then(response => {
+      console.log("RESPONSE: " + response)
       return response.json()
     }).then(data => {
       this.setState({
         mentors: data
       })
+    }).catch(error => {
+      console.log("Error: " + error)
     })
   }
 
