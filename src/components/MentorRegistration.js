@@ -57,7 +57,7 @@ class MentorRegistration extends Component {
               className="bio"
               type="textArea"
               name="bio"
-              value={this.state.name}
+              value={this.state.bio}
               onChange={this.handleChange}
               required
               autoFocus
@@ -66,7 +66,7 @@ class MentorRegistration extends Component {
             <input
               type="text"
               name="skill"
-              value={this.state.email}
+              value={this.state.skill}
               onChange={this.handleChange}
               required
             /><br/>

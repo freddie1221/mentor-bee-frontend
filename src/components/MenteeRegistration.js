@@ -6,7 +6,7 @@ class MenteeRegistration extends Component {
     super(props);
     this.state = {
       bio: '',
-      skill: '',
+      interest: '',
 
     }
     this.handleChange = this.handleChange.bind(this)
@@ -19,7 +19,32 @@ class MenteeRegistration extends Component {
     })
   }
   handleSubmit(event) {
-    console.log("Handling submit")
+    const url = "https://mentor-bee-api.herokuapp.com/mentees"
+    const data = { "mentee": {
+      "user_id": this.state.currentUser._id,
+      "bio": this.state.bio,
+      "interest": this.state.interest
+      }
+    }
+    console.log(data)
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { 
+        "Authorization": this.state.currentUser._token,
+        "Content-Type": "application/json" 
+      }
+    }).then(res => {
+      if (res.ok){
+        return res.json()
+      }
+    }).then(res => {
+      console.log(res);
+    }).catch(err => {
+      console.log(err)
+    })
+    event.preventDefault()
   }
 
   render() {
@@ -29,18 +54,18 @@ class MenteeRegistration extends Component {
           <label for="name">Bio</label>
           <Textarea
               className="bio"
-              type="text"
+              type="textArea"
               name="bio"
-              value={this.state.name}
+              value={this.state.bio}
               onChange={this.handleChange}
               required
               autoFocus
             /><br/>
-            <label for="skill">Interest</label>
+            <label for="interest">Skill</label>
             <input
               type="text"
               name="interest"
-              value={this.state.email}
+              value={this.state.interest}
               onChange={this.handleChange}
               required
             /><br/>

@@ -37,7 +37,7 @@ class Register extends Component {
         return res.json()
       }
     }).then(res => {
-      let user = new CurrentUser(res.user_id, res.user_name, res.user_email, res.auth_token[0])
+      let user = new CurrentUser(res.user_id, res.user_name, res.user_email, res.auth_token)
       window.localStorage.setItem("currentUser", JSON.stringify(user))
       this.props.history.push("/mentors");
     }).catch(err => {
