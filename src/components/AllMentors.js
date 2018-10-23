@@ -13,8 +13,6 @@ class AllMentors extends Component {
 
   componentDidMount() {
 
-    console.log(this.state.currentUser)
-
     const url = "https://mentor-bee-api.herokuapp.com/mentors"
     fetch(url, {
       headers: {
@@ -23,7 +21,6 @@ class AllMentors extends Component {
       }
     })
     .then(response => {
-      console.log("RESPONSE: " + response)
       return response.json()
     }).then(data => {
       this.setState({
