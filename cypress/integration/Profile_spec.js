@@ -13,4 +13,4 @@ describe('/profile', function() {
     cy.should("contain", "Become a mentee")
   })
 
-})
+}) 

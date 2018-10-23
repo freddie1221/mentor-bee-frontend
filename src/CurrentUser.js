@@ -1,4 +1,5 @@
-function CurrentUser(name, email, token) {
+function CurrentUser(id, name, email, token) {
+  this._id = id;
   this._name = name;
   this._email = email;
   this._token = token;

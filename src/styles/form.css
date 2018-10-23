@@ -3,7 +3,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-input[type=text], input[type=email], input[type=password] {
+input[type=text], input[type=email], input[type=password], .bio {
   width: 100%;
   padding: 15px;
   margin: 2% 0 6% 0;
@@ -15,10 +15,12 @@ input[type=text], input[type=email], input[type=password] {
   font-weight: 700;
 }
 
-input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, .bio:focus {
   outline: none;
   border-bottom: 2px solid #F3B700;
 }
+
+
 
 label {
   font-size: 0.8em;

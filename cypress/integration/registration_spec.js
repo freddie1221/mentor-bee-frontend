@@ -16,5 +16,5 @@ describe('Register component', function(){
       cy.get('input[name="password"]').type('password')
       cy.root().submit()
     })
-  })
+  }) 
 })

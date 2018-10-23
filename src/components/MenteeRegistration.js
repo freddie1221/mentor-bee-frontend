@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Textarea from 'react-textarea-autosize'
 
 class MenteeRegistration extends Component {
   constructor(props) {
@@ -26,7 +27,8 @@ class MenteeRegistration extends Component {
       <div className="profile-form-wrapper">
         <form onSubmit={this.handleSubmit}>
           <label for="name">Bio</label>
-          <input
+          <Textarea
+              className="bio"
               type="text"
               name="bio"
               value={this.state.name}
