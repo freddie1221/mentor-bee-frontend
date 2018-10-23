@@ -7,7 +7,11 @@ describe('visit homepage', function() {
 })
 
 describe('Register component', function(){
+<<<<<<< HEAD
   it.skip('redirects to /mentors on submission', function() {
+=======
+  it('can submit form', function() {
+>>>>>>> development
     cy.visit('/')
     cy.contains('Register').click()
     cy.get('form').within(($form) => {
@@ -15,7 +19,6 @@ describe('Register component', function(){
       cy.get('input[name="email"]').type('abc3@email.com')
       cy.get('input[name="password"]').type('password')
       cy.root().submit()
-      cy.url().should("include", "/mentors");
     })
   }) 
 })
