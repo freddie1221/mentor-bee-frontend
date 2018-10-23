@@ -5,7 +5,8 @@ class ProfilePage extends React.Component {
     super(props)
 
     this.state = {
-      mentor: []
+      mentor: [],
+      currentUser: JSON.parse(window.localStorage.getItem("currentUser"))
     }
   }
 
@@ -15,13 +16,19 @@ class ProfilePage extends React.Component {
 
     const url = `https://mentor-bee-api.herokuapp.com/users/${idString}`
 
-    fetch(url)
-    .then(response => {
+    fetch(url, {
+      headers: {
+        "Authorization": this.state.currentUser._token,
+        "Content-Type": "application/json"
+      }
+    }).then(response => {
       return response.json()
     }).then(data => {
       this.setState({
         mentor: data
       })
+    }).catch(error => {
+      console.log(error)
     })
   }
 

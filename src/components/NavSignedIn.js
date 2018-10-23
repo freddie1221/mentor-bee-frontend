@@ -6,7 +6,6 @@ class NavSignedIn extends Component {
 
 
   logOut() {
-    console.log("Being called!")
     window.localStorage.clear()
   }
 

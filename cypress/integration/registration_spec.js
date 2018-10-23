@@ -12,7 +12,7 @@ describe('Register component', function(){
     cy.contains('Register').click()
     cy.get('form').within(($form) => {
       cy.get('input[name="name"]').type('Freddie')
-      cy.get('input[name="email"]').type('abc3@email.com')
+      cy.get('input[name="email"]').type('a1b2c3@email.com')
       cy.get('input[name="password"]').type('password')
       cy.root().submit()
     })
