@@ -5,7 +5,7 @@ class Mentor extends React.Component {
     const userId = this.props.mentor.user_id
     const pic = this.props.mentor.pic
     const skill = this.props.mentor.skill
-    const name = this.props.mentor.names
+    const name = this.props.mentor.name
 
     return (
       <div>
