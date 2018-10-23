@@ -55,7 +55,7 @@ class Register extends Component {
         <br/><p id="tagline">Learn the skills you need from experts in the field. <br/>Register with us to learn from the best!</p>
       </div>
         <form onSubmit={this.handleSubmit}>
-          <label for="name">Name</label>
+          <label htmlFor="name">Name</label>
           <input
               type="text"
               name="name"
@@ -64,7 +64,7 @@ class Register extends Component {
               required
               autoFocus
             /><br/>
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
@@ -72,7 +72,7 @@ class Register extends Component {
               onChange={this.handleChange}
               required
             /><br/>
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
