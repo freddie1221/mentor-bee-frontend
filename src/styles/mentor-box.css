@@ -1,17 +1,31 @@
 .card {
-  border: 1px solid #2e2d2d;
-  margin: 3px;
+  margin: 5%;
   background: rgb(248, 248, 248);
+  box-shadow: 0 1px 2px #2e2d2d71;
+}
+
+.card-desc {
+  border-top: none;
+  margin-top: 0;
+  padding-bottom: 1%;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(29, 29, 29);
 }
 
 .profile-pic {
   width: 100%;
+  margin-bottom: 0;
+  object-fit: cover;
 }
 
 .card-name {
   margin-left: 6px;
-  margin-top: 1px;
+  margin-top: 0;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .card-skills {

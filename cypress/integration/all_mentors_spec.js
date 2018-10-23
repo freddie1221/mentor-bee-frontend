@@ -1,6 +1,6 @@
 describe("/mentors", function() {
-  it("displays all mentors", function() {
-    cy.visit("localhost:3000/#/mentors")
+  it.skip("displays all mentors", function() {
+    cy.visit('/#/mentors')
     cy.get(".card-wrapper")
     cy.should("contain", "Peeves")
   });

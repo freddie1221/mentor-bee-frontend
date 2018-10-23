@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './form.css';
-import './all-mentors.css';
-import './mentor-box.css';
-import App from './App';
+import './styles/index.css';
+import './styles/form.css';
+import './styles/all-mentors.css';
+import './styles/mentor-box.css';
+import './styles/profilePage.css';
+import './styles/profile-creation.css';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

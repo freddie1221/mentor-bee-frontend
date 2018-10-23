@@ -25,7 +25,7 @@ class AllMentors extends Component {
   render() {
     return (
       <div className="wrapper">
-        <h3 id="title">All Mentors</h3>
+        <h3 id="title">Available Mentors</h3>
         <div className="card-wrapper">
           {this.state.mentors.map((mentor) => {
             return <Mentor mentor={mentor} />

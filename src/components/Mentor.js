@@ -12,8 +12,10 @@ class Mentor extends React.Component {
         <a href={`/#mentors/${id}`}>
           <div className="card">
             <img alt="profile-pic" className="profile-pic" src={pic}></img>
-            <p className="card-name">{name}</p>
-            <p className="card-skills"><span className="skills-title">Available to mentor in:</span> {skills}</p>
+            <div className="card-desc">
+              <p className="card-name">{name}</p>
+              <p className="card-skills"><span className="skills-title">Available to mentor in:</span> {skills}</p>
+            </div>
           </div>
         </a>
       </div>

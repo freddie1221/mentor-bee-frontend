@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import CurrentUser from "../CurrentUser"
 
 class Register extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Register extends Component {
     })
   }
   handleSubmit(event) {
-    const url = "https://mentor-bee.herokuapp.com/users"
+    const url = "https://mentor-bee-api.herokuapp.com/users"
     const data = { "user": {
       "name": this.state.name,
       "email": this.state.email,
@@ -30,45 +31,51 @@ class Register extends Component {
     fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      }
+      headers: { "Content-Type": "application/json" }
     }).then(res => {
       if (res.ok){
         return res.json()
-      } else {
-        throw new Error ("Error: unable to register")
       }
+    }).then(res => {
+      let user = new CurrentUser(res.id, res.name, res.email)
+      window.localStorage.setItem("currentUser", JSON.stringify(user))
+      this.props.history.push("/mentors");
+    }).catch(err => {
+      console.log(err)
     })
-
-    this.props.history.push("/mentors");
+    
     event.preventDefault()
   }
 
   render() {
     return (
       <div className="clearfix">
+      <div className="title-box">
+        <h3 id="signup-title">Welcome to MentorBee.</h3>
+        <br/><p id="tagline">Learn the skills you need from experts in the field. <br/>Register with us to learn from the best!</p>
+      </div>
         <form onSubmit={this.handleSubmit}>
+          <label htmlFor="name">Name</label>
           <input
               type="text"
               name="name"
-              placeholder="Name"
               value={this.state.name}
               onChange={this.handleChange}
               required
+              autoFocus
             /><br/>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
-              placeholder="Email"
               value={this.state.email}
               onChange={this.handleChange}
               required
             /><br/>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
-              placeholder="Password"
               value={this.state.password}
               onChange={this.handleChange}
               required
@@ -79,7 +86,5 @@ class Register extends Component {
     );
   }
 }
-
-
 
 export default withRouter(Register);
