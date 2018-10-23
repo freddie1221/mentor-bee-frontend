@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Textarea from 'react-textarea-autosize'
+import { withRouter } from "react-router-dom";
 
 class MenteeRegistration extends Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class MenteeRegistration extends Component {
     this.state = {
       bio: '',
       interest: '',
+      currentUser: JSON.parse(window.localStorage.getItem("currentUser"))
 
     }
     this.handleChange = this.handleChange.bind(this)
@@ -61,7 +63,7 @@ class MenteeRegistration extends Component {
               required
               autoFocus
             /><br/>
-            <label for="interest">Skill</label>
+            <label for="interest">Interest</label>
             <input
               type="text"
               name="interest"
@@ -76,4 +78,4 @@ class MenteeRegistration extends Component {
   }
 }
 
-export default MenteeRegistration
+export default withRouter(MenteeRegistration)
