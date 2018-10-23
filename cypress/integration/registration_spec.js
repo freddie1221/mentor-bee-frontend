@@ -16,5 +16,8 @@ describe('Register component', function(){
       cy.get('input[name="password"]').type('password')
       cy.root().submit()
     })
-  }) 
+  })
+  it('can sign out', function() {
+    cy.contains('Sign out').click()
+  })
 })

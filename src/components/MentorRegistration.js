@@ -8,7 +8,7 @@ class MentorRegistration extends Component {
     this.state = {
       bio: '',
       skill: '',
-      currentUserId: JSON.parse(window.localStorage.getItem("currentUser"))._id
+      currentUser: JSON.parse(window.localStorage.getItem("currentUser"))
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -22,23 +22,26 @@ class MentorRegistration extends Component {
   handleSubmit(event) {
     const url = "https://mentor-bee-api.herokuapp.com/mentors"
     const data = { "mentor": {
-      "user_id": this.state.currentUserId,
+      "user_id": this.state.currentUser._id,
       "bio": this.state.bio,
       "skill": this.state.skill
       }
     }
-    
     console.log(data)
+
     fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" }
+      headers: { 
+        "Authorization": this.state.currentUser._token,
+        "Content-Type": "application/json" 
+      }
     }).then(res => {
       if (res.ok){
         return res.json()
       }
     }).then(res => {
-      this.props.history.push("/mentors");
+      console.log(res);
     }).catch(err => {
       console.log(err)
     })
