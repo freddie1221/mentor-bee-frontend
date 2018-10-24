@@ -21,6 +21,7 @@ class App extends Component {
     this.returnNav = this.returnNav.bind(this)
     this.signedIn = this.signedIn.bind(this)
     this.signedOut = this.signedOut.bind(this)
+    // this.currentUserExists = this.currentUserExists.bind(this)
   }
 
   signedIn() {
@@ -29,6 +30,12 @@ class App extends Component {
   
   signedOut() {
     this.setState({isSignedIn: false}) 
+  }
+  
+  componentDidMount() {
+    if (window.localStorage.getItem("currentUser")) {
+      this.setState({isSignedIn: true}) 
+    } 
   }
 
   returnNav() {

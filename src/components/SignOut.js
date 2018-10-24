@@ -7,12 +7,9 @@ class SignOut extends React.Component {
   componentDidMount(){
     this.props.signedOut()
   }
-  
 
-  
 
-render() {
-  
+render() {  
   return <Redirect to='/Sign-in'/>
 }
 
