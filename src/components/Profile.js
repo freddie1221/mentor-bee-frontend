@@ -16,12 +16,13 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    if (window.localStorage.getItem("currentUser")) {
+    const user = JSON.parse(window.localStorage.getItem("currentUser"))
+    if ( user._mentorBio !== "" || user._menteeBio !== "") {
       this.setState({ profileExists: true })
     }
   }
 
-        
+      
   render() {
 
     if (this.state.profileExists) {
