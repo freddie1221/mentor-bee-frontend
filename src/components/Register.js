@@ -39,11 +39,10 @@ class Register extends React.Component {
         return res.json()
       }
     }).then(res => {
+      console.log(res)
       let user = new CurrentUser(res.user.id, res.user.name, res.user.email, res.auth_token)
       window.localStorage.setItem("currentUser", JSON.stringify(user))
-      console.log(this.state.redirect)
       this.setState({ redirect: true })
-      console.log(this.state.redirect)
       
     }).catch(err => {
       console.log(err)
