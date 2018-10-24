@@ -11,7 +11,7 @@ class Profile extends Component {
     }
     return <PersonalProfile />
   }
-        
+
   render() {
     return (
       <div>
