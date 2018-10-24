@@ -7,7 +7,7 @@ describe('visit homepage', function() {
 })
 
 describe('Register component', function(){
-  it('can submit form', function() {
+  it.skip('can submit form', function() {
     cy.visit('/')
     cy.contains('Register').click()
     cy.get('form').within(($form) => {
@@ -17,7 +17,7 @@ describe('Register component', function(){
       cy.root().submit()
     })
   })
-  it('can sign out', function() {
+  it.skip('can sign out', function() {
     cy.contains('Sign out').click()
   })
 })
