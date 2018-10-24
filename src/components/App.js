@@ -15,11 +15,20 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isSignedIn: window.localStorage.getItem("currentUser")
+      isSignedIn: false
     }
     this.returnNav = this.returnNav.bind(this)
+    this.signedIn = this.signedIn.bind(this)
+    this.signedOut = this.signedOut.bind(this)
   }
 
+  signedIn() {
+    this.setState({isSignedIn: true}) 
+  }
+  
+  signedOut() {
+    this.setState({isSignedIn: false}) 
+  }
 
   returnNav() {
     if (this.state.isSignedIn) {
@@ -30,16 +39,23 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <HashRouter>
         <div>
           {this.returnNav()}
           <div className="content">
-            <Route exact path="/" component={Register}/>
+            <Route 
+              exact path="/" 
+              render={(props) => <Register {...props} signedIn={this.signedIn} />}
+            />
+            <Route 
+              path="/sign-in"
+              render={(props) => <SignIn {...props} signedIn={this.signedIn} />}
+            />
             <Route exact path="/mentors" component={AllMentors} onEnter={() => this.returnNav()}/>
             <Route path="/mentors/:id" component={ProfilePage}/>
             <Route path="/profile" component={Profile}/>
-            <Route path="/sign-in" component={SignIn}/>
           </div>
         </div>
       </HashRouter>
