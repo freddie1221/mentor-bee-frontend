@@ -54,7 +54,7 @@ class ProfilePage extends React.Component {
             <button>Contact</button>
           </form>
           <form>
-            <button id="book-btn">Book</button>
+            <button id="book-btn">Request Mentorship</button>
           </form>
         </div>
       </div>
