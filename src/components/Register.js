@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import CurrentUser from "../CurrentUser"
 
-class Register extends Component {
+class Register extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      redirect: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -37,9 +38,12 @@ class Register extends Component {
         return res.json()
       }
     }).then(res => {
-      console.log(res)
+      console.log("Hello")
       let user = new CurrentUser(res.user.id, res.user.name, res.user.email, res.auth_token)
       window.localStorage.setItem("currentUser", JSON.stringify(user))
+      console.log(this.state.redirect)
+      this.setState({ redirect: true })
+      console.log(this.state.redirect)
       
     }).catch(err => {
       console.log(err)
@@ -49,6 +53,11 @@ class Register extends Component {
   }
 
   render() {
+    // const { redirect } = this.state;
+    // if (redirect) {
+    //   return <Redirect to='/profile'/>;
+    // }
+
     return (
       <div className="clearfix">
       <div className="title-box">
