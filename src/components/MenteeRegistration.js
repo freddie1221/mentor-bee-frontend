@@ -57,7 +57,7 @@ class MenteeRegistration extends Component {
     return (
       <div className="profile-form-wrapper">
         <form onSubmit={this.handleSubmit}>
-          <label for="name">Bio</label>
+          <label>Bio</label>
           <Textarea
               className="bio"
               type="textArea"
@@ -67,7 +67,7 @@ class MenteeRegistration extends Component {
               required
               autoFocus
             /><br/>
-            <label for="interest">Interest</label>
+            <label>Interest</label>
             <input
               type="text"
               name="interest"
