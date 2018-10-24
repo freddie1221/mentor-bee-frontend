@@ -24,7 +24,7 @@ class AllMentors extends Component {
       return response.json()
     }).then(data => {
       this.setState({
-        mentors: data
+        mentors: data["mentors"]
       })
     }).catch(error => {
       console.log("Error: " + error)
