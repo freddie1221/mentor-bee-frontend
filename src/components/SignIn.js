@@ -38,7 +38,7 @@ class SignIn extends Component {
         return res.json()
       }
     }).then(res => {
-      let user = new CurrentUser(res.user_id, res.user_name, res.user_email, res.auth_token)
+      let user = new CurrentUser(res.user_id, res.user_name, res.user_email, res.auth_token, res.mentor_bio, res.mentor_skill, res.mentee_bio, res.mentee_interest, res.mentee_id)
       window.localStorage.setItem("currentUser", JSON.stringify(user))
       this.setState({ redirect: true });
     }).catch(err => {
