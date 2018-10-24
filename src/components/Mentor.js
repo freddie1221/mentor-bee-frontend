@@ -2,14 +2,14 @@ import React from "react";
 
 class Mentor extends React.Component {
   render() {
-    const userId = this.props.mentor.user_id
+    const mentorId = this.props.mentor.mentor_id
     const pic = this.props.mentor.pic
     const skill = this.props.mentor.skill
     const name = this.props.mentor.name
 
     return (
       <div>
-        <a href={`/#mentors/${userId}`}>
+        <a href={`/#mentors/${mentorId}`}>
           <div className="card">
             <img alt="profile-pic" className="profile-pic" src={pic}></img>
             <div className="card-desc">
