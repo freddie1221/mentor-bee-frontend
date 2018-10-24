@@ -17,7 +17,7 @@ class ProfilePage extends React.Component {
     const address = this.props.location.pathname
     const idString = address.split("mentors/")[1]
 
-    const url = `https://mentor-bee-api.herokuapp.com/users/${idString}`
+    const url = `https://mentor-bee-api.herokuapp.com/mentors/${idString}`
 
     fetch(url, {
       headers: {
@@ -27,8 +27,9 @@ class ProfilePage extends React.Component {
     }).then(response => {
       return response.json()
     }).then(data => {
+      console.log(data)
       this.setState({
-        mentor: data
+        mentor: data.mentor
       })
     }).catch(error => {
       console.log(error)
@@ -61,6 +62,8 @@ class ProfilePage extends React.Component {
     const name = this.state.mentor.name
     const pic = this.state.mentor.pic
     const email = this.state.mentor.email
+    const bio = this.state.mentor.bio
+    const skill = this.state.mentor.skill
     const mailto = `mailto:${email}` 
 
     return (
@@ -69,11 +72,10 @@ class ProfilePage extends React.Component {
         <img className="profile-pic" alt="profile-pic" src={pic}></img>
         <div className="profile-body">
           <p className="subtitle"> About</p>
-          <p>{name} is available to mentor in the following areas:</p>
-          <ul>
-            <li>This</li>
-            <li>That</li>
-          </ul>
+
+          <p> {bio} </p>
+
+          <p>{name} is available to mentor in <strong>{skill}</strong>.</p>
           <form method="post" action={mailto}>
             <button>Contact</button>
           </form>
