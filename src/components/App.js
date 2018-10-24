@@ -19,12 +19,16 @@ class App extends Component {
     }
     this.returnNav = this.returnNav.bind(this)
     this.signedIn = this.signedIn.bind(this)
+    this.signedOut = this.signedOut.bind(this)
   }
 
   signedIn() {
     this.setState({isSignedIn: true}) 
   }
-
+  
+  signedOut() {
+    this.setState({isSignedIn: false}) 
+  }
 
   returnNav() {
     if (this.state.isSignedIn) {
@@ -36,7 +40,6 @@ class App extends Component {
 
   render() {
     
-    
     return (
       <HashRouter>
         <div>
@@ -44,12 +47,15 @@ class App extends Component {
           <div className="content">
             <Route 
               exact path="/" 
-              render={(props) => <Register {...props} action={this.signedIn} />}
+              render={(props) => <Register {...props} signedIn={this.signedIn} />}
+            />
+            <Route 
+              path="/sign-in"
+              render={(props) => <SignIn {...props} signedIn={this.signedIn} />}
             />
             <Route exact path="/mentors" component={AllMentors} onEnter={() => this.returnNav()}/>
             <Route path="/mentors/:id" component={ProfilePage}/>
             <Route path="/profile" component={Profile}/>
-            <Route path="/sign-in" component={SignIn}/>
           </div>
         </div>
       </HashRouter>
