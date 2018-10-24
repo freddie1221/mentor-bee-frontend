@@ -8,6 +8,9 @@ class ProfilePage extends React.Component {
       mentor: [],
       currentUser: JSON.parse(window.localStorage.getItem("currentUser"))
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+
   }
 
   componentDidMount() {
@@ -32,6 +35,10 @@ class ProfilePage extends React.Component {
     })
   }
 
+  handleSubmit(event) {
+
+  }
+
   render() {
 
     const name = this.state.mentor.name
@@ -53,7 +60,7 @@ class ProfilePage extends React.Component {
           <form method="post" action={mailto}>
             <button>Contact</button>
           </form>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <button id="book-btn">Request Mentorship</button>
           </form>
         </div>
