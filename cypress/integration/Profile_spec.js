@@ -1,8 +1,8 @@
 describe('/profile', function() {
 
-  beforeEach.skip(function(){
-    cy.visit('/#/profile')
-  })
+  // beforeEach(function(){
+  //   cy.visit('/#/profile')
+  // })
 
   it.skip('become a mentor buutton', function() {
     cy.get(".profile-wrapper")
