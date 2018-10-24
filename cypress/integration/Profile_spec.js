@@ -1,14 +1,14 @@
 describe('/profile', function() {
 
-  beforeEach(function(){
+  beforeEach.skip(function(){
     cy.visit('/#/profile')
   })
 
-  it('become a mentor buutton', function() {
+  it.skip('become a mentor buutton', function() {
     cy.get(".profile-wrapper")
     cy.should("contain", "Become a mentor")
   })
-  it('become a mentee buutton', function() {
+  it.skip('become a mentee buutton', function() {
     cy.get(".profile-wrapper")
     cy.should("contain", "Become a mentee")
   })

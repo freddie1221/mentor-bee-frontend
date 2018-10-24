@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter, Redirect } from "react-router-dom";
 import CurrentUser from "../CurrentUser"
 
 class SignIn extends Component {
@@ -8,6 +9,7 @@ class SignIn extends Component {
     this.state = {
       email: '',
       password: '',
+      redirect: false
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -36,9 +38,10 @@ class SignIn extends Component {
         return res.json()
       }
     }).then(res => {
-      let user = new CurrentUser(res.user_id, res.user_name, res.user_email, res.auth_token)
+      this.props.signedIn()
+      let user = new CurrentUser(res.user_id, res.user_name, res.user_email, res.auth_token, res.mentor_bio, res.mentor_skill, res.mentee_bio, res.mentee_interest, res.mentee_id)
       window.localStorage.setItem("currentUser", JSON.stringify(user))
-      this.props.history.push("/profile");
+      this.setState({ redirect: true });
     }).catch(err => {
       console.log(err)
     })
@@ -46,6 +49,10 @@ class SignIn extends Component {
   }
 
   render() {
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to='/profile'/>;
+    }
     return (
       <div className="clearfix">
         <div className="title-box">
@@ -77,4 +84,4 @@ class SignIn extends Component {
 }
 
 
-export default SignIn;
+export default withRouter(SignIn);

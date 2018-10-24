@@ -33,9 +33,9 @@ class MentorRegistration extends Component {
     fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
-      headers: { 
+      headers: {
         "Authorization": this.state.currentUser._token,
-        "Content-Type": "application/json" 
+        "Content-Type": "application/json"
       }
     }).then(res => {
       if (res.ok){
@@ -43,9 +43,9 @@ class MentorRegistration extends Component {
       }
     }).then(res => {
         let user = JSON.parse(window.localStorage.getItem("currentUser"))
-        let updatedUser = new CurrentUser(user._id, user._name, user._email, user._token, res.bio, res.skill) 
+        let updatedUser = new CurrentUser(user._id, user._name, user._email, user._token, res.mentor.bio, res.mentor.skill) 
         window.localStorage.setItem("currentUser", JSON.stringify(updatedUser))
-    
+
     }).catch(err => {
       console.log(err)
     })
@@ -56,7 +56,7 @@ class MentorRegistration extends Component {
     return (
       <div className="profile-form-wrapper">
         <form onSubmit={this.handleSubmit}>
-          <label for="name">Bio</label>
+          <label>Bio</label>
           <Textarea
               className="bio"
               type="textArea"
@@ -66,7 +66,7 @@ class MentorRegistration extends Component {
               required
               autoFocus
             /><br/>
-            <label for="skill">Skill</label>
+            <label>Skill</label>
             <input
               type="text"
               name="skill"
