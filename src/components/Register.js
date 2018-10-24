@@ -34,11 +34,11 @@ class Register extends React.Component {
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" }
     }).then(res => {
+      console.log(res)
       if (res.ok){
         return res.json()
       }
     }).then(res => {
-      console.log("Hello")
       let user = new CurrentUser(res.user.id, res.user.name, res.user.email, res.auth_token)
       window.localStorage.setItem("currentUser", JSON.stringify(user))
       console.log(this.state.redirect)
@@ -53,10 +53,10 @@ class Register extends React.Component {
   }
 
   render() {
-    // const { redirect } = this.state;
-    // if (redirect) {
-    //   return <Redirect to='/profile'/>;
-    // }
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to='/profile'/>;
+    }
 
     return (
       <div className="clearfix">
