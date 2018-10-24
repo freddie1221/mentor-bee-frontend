@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CurrentUser from "../CurrentUser"
 
 class SignIn extends Component {
   constructor(props) {
@@ -20,7 +21,27 @@ class SignIn extends Component {
     })
   }
   handleSubmit(event) {
-    // TODO connect to API
+    const url = "https://mentor-bee-api.herokuapp.com/login"
+    const data = {
+      "email": this.state.email,
+      "password": this.state.password
+    }
+    
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" }
+    }).then(res => {
+      if (res.ok){
+        return res.json()
+      }
+    }).then(res => {
+      let user = new CurrentUser(res.user_id, res.user_name, res.user_email, res.auth_token)
+      window.localStorage.setItem("currentUser", JSON.stringify(user))
+      this.props.history.push("/profile");
+    }).catch(err => {
+      console.log(err)
+    })
     event.preventDefault()
   }
 

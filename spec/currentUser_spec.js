@@ -5,7 +5,7 @@ describe(CurrentUser, function() {
   var currentUser;
 
   beforeEach(function() {
-    currentUser = new CurrentUser("Alice", "ab@cd.com", "123abc");
+    currentUser = new CurrentUser(1, "Alice", "ab@cd.com", "123abc");
   })
   
   it("has a name", function() {
