@@ -15,6 +15,10 @@ ul.header li {
   margin-top: 4px;
 }
 
+#signIn-btn {
+  margin-top: 3.2px;
+}
+
 ul.header {
   margin: 0;
   background-color: #F3B700;
