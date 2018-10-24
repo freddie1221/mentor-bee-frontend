@@ -1,4 +1,4 @@
-function CurrentUser(id, name, email, token, mentorBio = "", mentorSkill = "", menteeBio = "", menteeInterest = "") {
+function CurrentUser(id, name, email, token, mentorBio = "", mentorSkill = "", menteeBio = "", menteeInterest = "", menteeID) {
   this._id = id;
   this._name = name;
   this._email = email;
@@ -7,8 +7,9 @@ function CurrentUser(id, name, email, token, mentorBio = "", mentorSkill = "", m
   this._mentorSkill = mentorSkill;
   this._menteeBio = menteeBio;
   this._menteeInterest = menteeInterest;
+  this._menteeID = menteeID;
 }
-  
+
 CurrentUser.prototype.getName = function() {
   return this._name;
 }
@@ -34,5 +35,3 @@ CurrentUser.prototype.setToken = function(updatedToken) {
 }
 
 module.exports = CurrentUser;
-
-

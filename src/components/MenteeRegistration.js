@@ -44,7 +44,7 @@ class MenteeRegistration extends Component {
       }
     }).then(res => {
       let user = JSON.parse(window.localStorage.getItem("currentUser"))
-      let updatedUser = new CurrentUser(user._id, user._name, user._email, user._token, '', '', res.mentee.bio, res.mentee.interest) 
+      let updatedUser = new CurrentUser(user._id, user._name, user._email, user._token, '', '', res.mentee.bio, res.mentee.interest, res.mentee.mentee_id) 
       window.localStorage.setItem("currentUser", JSON.stringify(updatedUser))
 
     }).catch(err => {
@@ -57,7 +57,7 @@ class MenteeRegistration extends Component {
     return (
       <div className="profile-form-wrapper">
         <form onSubmit={this.handleSubmit}>
-          <label for="name">Bio</label>
+          <label>Bio</label>
           <Textarea
               className="bio"
               type="textArea"
@@ -67,7 +67,7 @@ class MenteeRegistration extends Component {
               required
               autoFocus
             /><br/>
-            <label for="interest">Interest</label>
+            <label>Interest</label>
             <input
               type="text"
               name="interest"

@@ -8,13 +8,16 @@ class ProfilePage extends React.Component {
       mentor: [],
       currentUser: JSON.parse(window.localStorage.getItem("currentUser"))
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+
   }
 
   componentDidMount() {
     const address = this.props.location.pathname
     const idString = address.split("mentors/")[1]
 
-    const url = `https://mentor-bee-api.herokuapp.com/users/${idString}`
+    const url = `https://mentor-bee-api.herokuapp.com/mentors/${idString}`
 
     fetch(url, {
       headers: {
@@ -25,11 +28,40 @@ class ProfilePage extends React.Component {
       return response.json()
     }).then(data => {
       this.setState({
-        mentor: data
+        mentor: data.mentor
       })
     }).catch(error => {
       console.log(error)
     })
+  }
+
+  handleSubmit(event) {
+
+    const data = {
+      "mentorship": {
+        "mentor_id": this.state.mentor.mentor_id,
+        "mentee_id": this.state.currentUser._menteeID
+      }
+    }
+
+    const mentorshipURL = "https://mentor-bee-api.herokuapp.com/mentorships"
+
+    fetch(mentorshipURL, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Authorization": this.state.currentUser._token,
+        "Content-Type": "application/json"
+      }
+    }).then(res => {
+      return res.json()
+    }).then(response => {
+      console.log(`${response.mentorship.mentor_name} is now mentoring ${response.mentorship.mentee_name}`)
+    }).catch(error => {
+      console.log(error)
+    })
+
+    event.preventDefault()
   }
 
   render() {
@@ -37,6 +69,8 @@ class ProfilePage extends React.Component {
     const name = this.state.mentor.name
     const pic = this.state.mentor.pic
     const email = this.state.mentor.email
+    const bio = this.state.mentor.bio
+    const skill = this.state.mentor.skill
     const mailto = `mailto:${email}` 
 
     return (
@@ -45,16 +79,15 @@ class ProfilePage extends React.Component {
         <img className="profile-pic" alt="profile-pic" src={pic}></img>
         <div className="profile-body">
           <p className="subtitle"> About</p>
-          <p>{name} is available to mentor in the following areas:</p>
-          <ul>
-            <li>This</li>
-            <li>That</li>
-          </ul>
+
+          <p> {bio} </p>
+
+          <p>{name} is available to mentor in <strong>{skill}</strong>.</p>
           <form method="post" action={mailto}>
             <button>Contact</button>
           </form>
-          <form>
-            <button id="book-btn">Book</button>
+          <form onSubmit={this.handleSubmit}>
+            <button id="book-btn">Request Mentorship</button>
           </form>
         </div>
       </div>

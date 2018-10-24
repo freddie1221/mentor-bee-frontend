@@ -28,7 +28,6 @@ class SignIn extends Component {
       "email": this.state.email,
       "password": this.state.password
     }
-    console.log(data)
     
     fetch(url, {
       method: "POST",
@@ -84,4 +83,4 @@ class SignIn extends Component {
 }
 
 
-export default SignIn;
+export default withRouter(SignIn);
