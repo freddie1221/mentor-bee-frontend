@@ -9,7 +9,7 @@ function CurrentUser(id, name, email, token, mentorBio = "", mentorSkill = "", m
   this._menteeInterest = menteeInterest;
   this._menteeID = menteeID;
 }
-  
+
 CurrentUser.prototype.getName = function() {
   return this._name;
 }
@@ -35,5 +35,3 @@ CurrentUser.prototype.setToken = function(updatedToken) {
 }
 
 module.exports = CurrentUser;
-
-
