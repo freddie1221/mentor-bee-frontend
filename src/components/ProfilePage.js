@@ -36,7 +36,24 @@ class ProfilePage extends React.Component {
   }
 
   handleSubmit(event) {
+    const data = {
+      "mentorship": {
+        "mentor_id": this.state.mentor.id
+      }
+    }
 
+    const mentorshipURL = "https://mentor-bee-api.herokuapp.com/mentorships"
+
+    fetch(mentorshipURL, {
+      headers: {
+        "Authorization": this.state.currentUser._token,
+        "Content-Type": "application/json"
+      }
+    }).then(response => {
+      return response.json()
+    }).catch(error => {
+      console.log(error)
+    })
   }
 
   render() {
