@@ -33,14 +33,10 @@ class Profile extends Component {
   render () {
     return (
       <div className="profile-wrapper">
-        <form>
-          <button onClick={this.mentor}>Become a mentor</button>
-          {this.state.mentorForm}
-        </form>
-        <form>
+        <button onClick={this.mentor}>Become a mentor</button>
+        {this.state.mentorForm}
         <button onClick={this.mentee}>Become a mentee</button>
-          {this.state.menteeForm}
-        </form>
+        {this.state.menteeForm}
       </div>
     )
   }
