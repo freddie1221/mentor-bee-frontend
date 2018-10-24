@@ -85,9 +85,8 @@ class ProfilePage extends React.Component {
       )
     } else {
       return (
-        <div>
-          <p><SuccessIndicator size='40px' color='#F3B700' /></p>
-          <p>{this.state.confirmedMentor} is now mentoring {this.state.confirmedMentee}</p>
+        <div id="confirmation">
+          <p id="tick"><SuccessIndicator size='60px' color='#F3B700' /></p>
         </div>
       )
     }
