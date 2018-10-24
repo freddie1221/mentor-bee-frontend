@@ -15,9 +15,14 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isSignedIn: window.localStorage.getItem("currentUser")
+      isSignedIn: false
     }
     this.returnNav = this.returnNav.bind(this)
+    this.signedIn = this.signedIn.bind(this)
+  }
+
+  signedIn() {
+    this.setState({isSignedIn: true}) 
   }
 
 
@@ -30,12 +35,17 @@ class App extends Component {
   }
 
   render() {
+    
+    
     return (
       <HashRouter>
         <div>
           {this.returnNav()}
           <div className="content">
-            <Route exact path="/" component={Register}/>
+            <Route 
+              exact path="/" 
+              render={(props) => <Register {...props} action={this.signedIn} />}
+            />
             <Route exact path="/mentors" component={AllMentors} onEnter={() => this.returnNav()}/>
             <Route path="/mentors/:id" component={ProfilePage}/>
             <Route path="/profile" component={Profile}/>

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { withRouter, Redirect } from "react-router-dom";
 import CurrentUser from "../CurrentUser"
 
@@ -34,16 +34,18 @@ class Register extends React.Component {
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" }
     }).then(res => {
-      console.log(res)
       if (res.ok){
         return res.json()
       }
     }).then(res => {
       console.log(res)
+      this.props.action()
       let user = new CurrentUser(res.user.id, res.user.name, res.user.email, res.auth_token)
+      console.log(user)
       window.localStorage.setItem("currentUser", JSON.stringify(user))
+      console.log(this.state.redirect)
       this.setState({ redirect: true })
-      
+      console.log(this.state.redirect)
     }).catch(err => {
       console.log(err)
     })
