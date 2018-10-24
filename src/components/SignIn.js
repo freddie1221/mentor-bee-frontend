@@ -38,6 +38,7 @@ class SignIn extends Component {
         return res.json()
       }
     }).then(res => {
+      this.props.signedIn()
       let user = new CurrentUser(res.user_id, res.user_name, res.user_email, res.auth_token)
       window.localStorage.setItem("currentUser", JSON.stringify(user))
       this.setState({ redirect: true });
