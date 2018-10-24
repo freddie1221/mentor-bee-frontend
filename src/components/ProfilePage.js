@@ -27,7 +27,6 @@ class ProfilePage extends React.Component {
     }).then(response => {
       return response.json()
     }).then(data => {
-      console.log(data)
       this.setState({
         mentor: data.mentor
       })
@@ -37,8 +36,6 @@ class ProfilePage extends React.Component {
   }
 
   handleSubmit(event) {
-
-    console.log(this.state.mentor)
 
     const data = {
       "mentorship": {
@@ -59,7 +56,7 @@ class ProfilePage extends React.Component {
     }).then(res => {
       return res.json()
     }).then(response => {
-      console.log(response)
+      console.log(`${response.mentorship.mentor_name} is now mentoring ${response.mentorship.mentee_name}`)
     }).catch(error => {
       console.log(error)
     })
