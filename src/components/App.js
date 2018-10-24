@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Register from "./Register";
 import SignIn from "./SignIn";
+import SignOut from "./SignOut";
 import AllMentors from "./AllMentors";
 import ProfilePage from "./ProfilePage";
 import Profile from "./Profile";
@@ -52,6 +53,10 @@ class App extends Component {
             <Route 
               path="/sign-in"
               render={(props) => <SignIn {...props} signedIn={this.signedIn} />}
+            />
+            <Route 
+              path="/sign-out"
+              render={(props) => <SignOut {...props} signedOut={this.signedOut} />}
             />
             <Route exact path="/mentors" component={AllMentors} onEnter={() => this.returnNav()}/>
             <Route path="/mentors/:id" component={ProfilePage}/>
