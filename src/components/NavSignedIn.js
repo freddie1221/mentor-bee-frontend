@@ -4,12 +4,6 @@ import bee from '../bee.svg';
 
 class NavSignedIn extends Component {
 
-
-  logOut() {
-    window.localStorage.clear()
-  }
-// onClick={this.logOut}
-
   render() {
     return(
       <ul className="header">
