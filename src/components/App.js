@@ -38,7 +38,7 @@ class App extends Component {
             <Route exact path="/" component={Register}/>
             <Route exact path="/mentors" component={AllMentors} onEnter={() => this.returnNav()}/>
             <Route path="/mentors/:id" component={ProfilePage}/>
-            <Route exact path="/profile" component={Profile}/>
+            <Route path="/profile" component={Profile}/>
             <Route path="/sign-in" component={SignIn}/>
           </div>
         </div>
