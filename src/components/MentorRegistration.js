@@ -33,9 +33,9 @@ class MentorRegistration extends Component {
     fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
-      headers: { 
+      headers: {
         "Authorization": this.state.currentUser._token,
-        "Content-Type": "application/json" 
+        "Content-Type": "application/json"
       }
     }).then(res => {
       if (res.ok){
@@ -45,7 +45,7 @@ class MentorRegistration extends Component {
         let user = JSON.parse(window.localStorage.getItem("currentUser"))
         let updatedUser = new CurrentUser(user._id, user._name, user._email, user._token, res.mentor.bio, res.mentor.skill) 
         window.localStorage.setItem("currentUser", JSON.stringify(updatedUser))
-    
+
     }).catch(err => {
       console.log(err)
     })
