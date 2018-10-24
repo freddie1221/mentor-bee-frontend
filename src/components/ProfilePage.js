@@ -72,18 +72,23 @@ class ProfilePage extends React.Component {
       console.log(error)
     })
 
-    this.renderConfirmation()
     event.preventDefault()
   }
 
-  renderConfirmation() {
-    if (!this.state.mentorshipConfirm) return null
-
-    return (
-      <div>
-        <p>{this.state.confirmedMentee} is now mentoring {this.state.confirmedMentee}</p>
-      </div>
-    )
+  requestButton() {
+    if (!this.state.mentorshipConfirm) {
+      return (
+      <form onSubmit={this.handleSubmit}>
+            <button id="book-btn">Request Mentorship</button>
+      </form>
+      )
+    } else {
+      return (
+        <div>
+          <p>{this.state.confirmedMentor} is now mentoring {this.state.confirmedMentee}</p>
+        </div>
+      )
+    }
   }
 
   render() {
@@ -108,9 +113,7 @@ class ProfilePage extends React.Component {
           <form method="post" action={mailto}>
             <button>Contact</button>
           </form>
-          <form onSubmit={this.handleSubmit}>
-            <button id="book-btn">Request Mentorship</button>
-          </form>
+          {this.requestButton()}
         </div>
       </div>
     )
