@@ -1,4 +1,5 @@
 import React from "react";
+const SuccessIndicator = require("react-success-indicator")
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -85,6 +86,7 @@ class ProfilePage extends React.Component {
     } else {
       return (
         <div>
+          <p><SuccessIndicator size='40px' color='#F3B700' /></p>
           <p>{this.state.confirmedMentor} is now mentoring {this.state.confirmedMentee}</p>
         </div>
       )
