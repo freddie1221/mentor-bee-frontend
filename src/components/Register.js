@@ -17,7 +17,6 @@ class Register extends React.Component {
   }
 
   componentDidMount() {
-// when it mounts, check if there's a current user. If there is, set redirect to true
     if (window.localStorage.getItem("currentUser")) {
       this.setState({ redirect: true })
     }
