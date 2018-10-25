@@ -15,6 +15,13 @@ class Register extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+
+  componentDidMount() {
+    if (window.localStorage.getItem("currentUser")) {
+      this.setState({ redirect: true })
+    }
+  }
+
   handleChange(event) {
     const target = event.target
     this.setState({
@@ -53,7 +60,7 @@ class Register extends React.Component {
   render() {
     const { redirect } = this.state;
     if (redirect) {
-      return <Redirect to='/profile'/>;
+      return <Redirect to='/mentors'/>;
     }
 
     return (
