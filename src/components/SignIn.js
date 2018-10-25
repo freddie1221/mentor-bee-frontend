@@ -15,6 +15,12 @@ class SignIn extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+  
+  componentDidMount() {
+    if (window.localStorage.getItem("currentUser")) {
+      this.setState({ redirect: true })
+    }
+  }
 
   handleChange(event) {
     const target = event.target
