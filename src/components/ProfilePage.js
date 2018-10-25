@@ -80,7 +80,7 @@ class ProfilePage extends React.Component {
 
     if (!this.state.mentorshipConfirm) {
 
-      if (this.state.currentUser._menteeID === null) {
+      if (!this.state.currentUser._menteeID) {
         return (
           <form onSubmit={this.handleSubmit}>
                 <button id="disabled-btn" disabled>Mentor Me!</button>
