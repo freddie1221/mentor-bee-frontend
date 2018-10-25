@@ -7,8 +7,6 @@ class Profile extends Component {
   constructor(props){
     super(props)
     this.state = {
-      mentorCreateUrl: 'https://mentor-bee-api.herokuapp.com/mentors',
-      menteeCreateUrl: 'https://mentor-bee-api.herokuapp.com/mentees',
       mentorForm: '',
       menteeForm: ''
     }

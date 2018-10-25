@@ -15,7 +15,7 @@ class SignIn extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-  
+
   componentDidMount() {
     if (window.localStorage.getItem("currentUser")) {
       this.setState({ redirect: true })
@@ -45,7 +45,6 @@ class SignIn extends Component {
       }
     }).then(res => {
       this.props.signedIn()
-      console.log(res)
       let user = new CurrentUser(res.user_id, res.name, res.email, res.auth_token, res.pic, res.mentor_bio, res.mentor_skill, res.mentee_bio, res.mentee_interest, res.mentee_id)
       window.localStorage.setItem("currentUser", JSON.stringify(user))
       this.setState({ redirect: true });
