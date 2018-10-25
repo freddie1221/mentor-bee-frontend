@@ -20,8 +20,6 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, .bi
   border-bottom: 2px solid #F3B700;
 }
 
-
-
 label {
   font-size: 0.8em;
 }
@@ -65,6 +63,16 @@ button:hover {
   float: left;
   width: 100%;
   background-color: #F3B700;
+}
+
+#disabled-btn {
+  color: rgba(54, 54, 54, 0.616);
+  background-color: rgba(100, 100, 100, 0.342);
+  cursor: auto;
+}
+
+#disabled-btn:hover {
+  opacity: 100%;
 }
 
 .clearfix {
