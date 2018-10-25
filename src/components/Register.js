@@ -15,6 +15,13 @@ class Register extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+
+  componentDidMount() {
+    if (window.localStorage.getItem("currentUser")) {
+      this.setState({ redirect: true })
+    }
+  }
+
   handleChange(event) {
     const target = event.target
     this.setState({
@@ -26,7 +33,7 @@ class Register extends React.Component {
     const data = { "user": {
       "name": this.state.name,
       "email": this.state.email,
-      "password": this.state.password
+      "password": this.state.password,
       }
     }
     fetch(url, {
@@ -39,7 +46,7 @@ class Register extends React.Component {
       }
     }).then(res => {
       this.props.signedIn()
-      let user = new CurrentUser(res.user.id, res.user.name, res.user.email, res.auth_token)
+      let user = new CurrentUser(res.user.id, res.user.name, res.user.email, res.auth_token, res.user.pic)
       window.localStorage.setItem("currentUser", JSON.stringify(user))
       this.setState({ redirect: true })
 

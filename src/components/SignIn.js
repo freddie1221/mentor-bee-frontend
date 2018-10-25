@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Redirect } from "react-router-dom";
+import { withRouter, Redirect, NavLink } from "react-router-dom";
 import CurrentUser from "../CurrentUser"
 
 class SignIn extends Component {
@@ -16,6 +16,12 @@ class SignIn extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  componentDidMount() {
+    if (window.localStorage.getItem("currentUser")) {
+      this.setState({ redirect: true })
+    }
+  }
+
   handleChange(event) {
     const target = event.target
     this.setState({
@@ -28,7 +34,7 @@ class SignIn extends Component {
       "email": this.state.email,
       "password": this.state.password
     }
-    
+
     fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
@@ -39,7 +45,7 @@ class SignIn extends Component {
       }
     }).then(res => {
       this.props.signedIn()
-      let user = new CurrentUser(res.user_id, res.user_name, res.user_email, res.auth_token, res.mentor_bio, res.mentor_skill, res.mentee_bio, res.mentee_interest, res.mentee_id)
+      let user = new CurrentUser(res.user_id, res.name, res.email, res.auth_token, res.pic, res.mentor_bio, res.mentor_skill, res.mentee_bio, res.mentee_interest, res.mentee_id)
       window.localStorage.setItem("currentUser", JSON.stringify(user))
       this.setState({ redirect: true });
     }).catch(err => {
@@ -77,6 +83,9 @@ class SignIn extends Component {
               required
             /><br/>
               <button type="submit" className="signupbtn">Sign in</button>
+              <br/>
+              <br/>
+              <p>No account? <NavLink to="/">Sign up here</NavLink></p>
         </form>
       </div>
     );

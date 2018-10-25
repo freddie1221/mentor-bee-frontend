@@ -55,6 +55,8 @@ button {
   opacity: 0.9;
 }
 
+
+
 button:hover {
   opacity:1;
 }
@@ -63,6 +65,24 @@ button:hover {
   float: left;
   width: 100%;
   background-color: #F3B700;
+}
+
+.submit-button {
+  float: left;
+  width: 100%;
+  color: #3E5A4F;
+  font-weight: bold;
+  border: solid 2px #3E5A4F;
+  background-color: transparent;
+}
+
+.submit-button:hover {
+  float: left;
+  width: 100%;
+  font-weight: normal;
+  color: #FFFFFF;
+  border: solid 2px #3E5A4F;
+  background-color: #3E5A4F;
 }
 
 #disabled-btn {
