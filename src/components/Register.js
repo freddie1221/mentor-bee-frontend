@@ -60,7 +60,7 @@ class Register extends React.Component {
   render() {
     const { redirect } = this.state;
     if (redirect) {
-      return <Redirect to='/profile'/>;
+      return <Redirect to='/mentors'/>;
     }
 
     return (
