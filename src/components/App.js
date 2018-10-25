@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Register from "./Register";
 import SignIn from "./SignIn";
+import SignOut from "./SignOut";
 import AllMentors from "./AllMentors";
 import ProfilePage from "./ProfilePage";
 import Profile from "./Profile";
@@ -29,6 +30,12 @@ class App extends Component {
   signedOut() {
     this.setState({isSignedIn: false}) 
   }
+  
+  componentDidMount() {
+    if (window.localStorage.getItem("currentUser")) {
+      this.setState({isSignedIn: true}) 
+    } 
+  }
 
   returnNav() {
     if (this.state.isSignedIn) {
@@ -52,6 +59,10 @@ class App extends Component {
             <Route 
               path="/sign-in"
               render={(props) => <SignIn {...props} signedIn={this.signedIn} />}
+            />
+            <Route 
+              path="/sign-out"
+              render={(props) => <SignOut {...props} signedOut={this.signedOut} />}
             />
             <Route exact path="/mentors" component={AllMentors} onEnter={() => this.returnNav()}/>
             <Route path="/mentors/:id" component={ProfilePage}/>

@@ -45,6 +45,7 @@ class MentorRegistration extends Component {
         let user = JSON.parse(window.localStorage.getItem("currentUser"))
         let updatedUser = new CurrentUser(user._id, user._name, user._email, user._token, res.mentor.pic, res.mentor.bio, res.mentor.skill)
         window.localStorage.setItem("currentUser", JSON.stringify(updatedUser))
+        this.props.action()
 
     }).catch(err => {
       console.log(err)

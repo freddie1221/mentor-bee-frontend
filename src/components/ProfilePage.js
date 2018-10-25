@@ -1,4 +1,5 @@
 import React from "react";
+const SuccessIndicator = require("react-success-indicator")
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -6,7 +7,10 @@ class ProfilePage extends React.Component {
 
     this.state = {
       mentor: [],
-      currentUser: JSON.parse(window.localStorage.getItem("currentUser"))
+      currentUser: JSON.parse(window.localStorage.getItem("currentUser")),
+      mentorshipConfirm: false,
+      confirmedMentor: "",
+      confirmedMentee: ""
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -54,14 +58,38 @@ class ProfilePage extends React.Component {
         "Content-Type": "application/json"
       }
     }).then(res => {
-      return res.json()
+      if (res.ok) {
+        this.setState({
+          mentorshipConfirm: true
+        })
+        return res.json()
+      }
     }).then(response => {
-      console.log(`${response.mentorship.mentor_name} is now mentoring ${response.mentorship.mentee_name}`)
+      this.setState({
+        confirmedMentor: response.mentorship.mentor_name,
+        confirmedMentee: response.mentorship.mentee_name
+      })
     }).catch(error => {
       console.log(error)
     })
 
     event.preventDefault()
+  }
+
+  requestButton() {
+    if (!this.state.mentorshipConfirm) {
+      return (
+      <form onSubmit={this.handleSubmit}>
+            <button id="book-btn">Request Mentorship</button>
+      </form>
+      )
+    } else {
+      return (
+        <div id="confirmation">
+          <p id="tick"><SuccessIndicator size='60px' color='#F3B700' /></p>
+        </div>
+      )
+    }
   }
 
   render() {
@@ -86,9 +114,7 @@ class ProfilePage extends React.Component {
           <form method="post" action={mailto}>
             <button>Contact</button>
           </form>
-          <form onSubmit={this.handleSubmit}>
-            <button id="book-btn">Request Mentorship</button>
-          </form>
+          {this.requestButton()}
         </div>
       </div>
     )

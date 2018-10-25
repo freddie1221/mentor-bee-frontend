@@ -6,6 +6,7 @@ import './styles/all-mentors.css';
 import './styles/mentor-box.css';
 import './styles/profilePage.css';
 import './styles/profile-creation.css';
+import './styles/confirmation-message.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
