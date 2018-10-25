@@ -5,6 +5,7 @@ import CurrentUser from "../CurrentUser"
 class SignOut extends React.Component {
 
   componentDidMount(){
+    window.localStorage.clear()
     this.props.signedOut()
   }
 
