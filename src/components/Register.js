@@ -15,6 +15,14 @@ class Register extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+
+  componentDidMount() {
+// when it mounts, check if there's a current user. If there is, set redirect to true
+    if (window.localStorage.getItem("currentUser")) {
+      this.setState({ redirect: true })
+    }
+  }
+
   handleChange(event) {
     const target = event.target
     this.setState({
