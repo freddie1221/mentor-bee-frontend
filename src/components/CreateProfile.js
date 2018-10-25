@@ -15,7 +15,7 @@ class Profile extends Component {
     this.mentor = this.mentor.bind(this)
     this.mentee = this.mentee.bind(this)
   }
-  
+
   mentor() {
     this.setState({
       mentorForm: <MentorRegistration action={this.props.action}/>,

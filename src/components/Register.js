@@ -33,7 +33,7 @@ class Register extends React.Component {
     const data = { "user": {
       "name": this.state.name,
       "email": this.state.email,
-      "password": this.state.password
+      "password": this.state.password,
       }
     }
     fetch(url, {
@@ -46,7 +46,8 @@ class Register extends React.Component {
       }
     }).then(res => {
       this.props.signedIn()
-      let user = new CurrentUser(res.user.id, res.user.name, res.user.email, res.auth_token)
+      console.log(res.user)
+      let user = new CurrentUser(res.user.id, res.user.name, res.user.email, res.auth_token, res.user.pic)
       window.localStorage.setItem("currentUser", JSON.stringify(user))
       this.setState({ redirect: true })
 
@@ -60,7 +61,7 @@ class Register extends React.Component {
   render() {
     const { redirect } = this.state;
     if (redirect) {
-      return <Redirect to='/mentors'/>;
+      return <Redirect to='/profile'/>;
     }
 
     return (

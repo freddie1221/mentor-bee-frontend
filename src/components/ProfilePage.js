@@ -83,19 +83,19 @@ class ProfilePage extends React.Component {
       if (this.state.currentUser._menteeID === null) {
         return (
           <form onSubmit={this.handleSubmit}>
-                <button id="disabled-btn" disabled>Request Mentorship</button>
+                <button id="disabled-btn" disabled>Mentor Me!</button>
           </form>
           )
       } else if (this.state.currentUser._id === this.state.mentor.user_id) {
         return (
           <form onSubmit={this.handleSubmit}>
-                <button id="disabled-btn" disabled>Request Mentorship</button>
+                <button id="disabled-btn" disabled>Mentor Me!</button>
           </form>
           )
       } else {
         return (
           <form onSubmit={this.handleSubmit}>
-                <button id="book-btn">Request Mentorship</button>
+                <button id="book-btn">Mentor Me!</button>
           </form>
           )
       } 

@@ -1,7 +1,8 @@
-function CurrentUser(id, name, email, token, mentorBio = "", mentorSkill = "", menteeBio = "", menteeInterest = "", menteeID) {
+function CurrentUser(id, name, email, token, pic, mentorBio = "", mentorSkill = "", menteeBio = "", menteeInterest = "", menteeID) {
   this._id = id;
   this._name = name;
   this._email = email;
+  this._pic = pic;
   this._token = token;
   this._mentorBio = mentorBio;
   this._mentorSkill = mentorSkill;

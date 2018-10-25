@@ -34,9 +34,9 @@ class MenteeRegistration extends Component {
     fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
-      headers: { 
+      headers: {
         "Authorization": this.state.currentUser._token,
-        "Content-Type": "application/json" 
+        "Content-Type": "application/json"
       }
     }).then(res => {
       if (res.ok){
@@ -44,7 +44,7 @@ class MenteeRegistration extends Component {
       }
     }).then(res => {
       let user = JSON.parse(window.localStorage.getItem("currentUser"))
-      let updatedUser = new CurrentUser(user._id, user._name, user._email, user._token, '', '', res.mentee.bio, res.mentee.interest, res.mentee.mentee_id) 
+      let updatedUser = new CurrentUser(user._id, user._name, user._email, user._token, res.mentee.pic, '', '', res.mentee.bio, res.mentee.interest, res.mentee.mentee_id) 
       window.localStorage.setItem("currentUser", JSON.stringify(updatedUser))
       this.props.action()
 
