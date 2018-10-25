@@ -22,7 +22,6 @@ class Profile extends Component {
     }
   }
 
-      
   render() {
 
     if (this.state.profileExists) {
@@ -30,7 +29,7 @@ class Profile extends Component {
     } else {
       return <CreateProfile action={this.profileCreated}/>
     }
-    
+
   }
 }
 
