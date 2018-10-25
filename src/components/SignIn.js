@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Redirect } from "react-router-dom";
+import { withRouter, Redirect, NavLink } from "react-router-dom";
 import CurrentUser from "../CurrentUser"
 
 class SignIn extends Component {
@@ -77,6 +77,9 @@ class SignIn extends Component {
               required
             /><br/>
               <button type="submit" className="signupbtn">Sign in</button>
+              <br/>
+              <br/>
+              <p>No account? <NavLink to="/">Sign up here</NavLink></p>
         </form>
       </div>
     );
