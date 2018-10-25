@@ -5,7 +5,7 @@ class PersonalProfile extends Component {
   render () {
     let user = JSON.parse(window.localStorage.getItem("currentUser"))
     let mentorOrMentee;
-    if (user._mentorBio !== "") {
+    if (user._mentorBio !== null) {
       mentorOrMentee = (
         <span>
           <p>{user._mentorBio}</p>
@@ -14,8 +14,7 @@ class PersonalProfile extends Component {
             <li>{user._mentorSkill}</li>
           </ul>
         </span>
-      )}
-      if (user._menteeBio !== "") {
+      )} else {
         mentorOrMentee = (
           <span>
             <p>{user._menteeBio}</p>
@@ -24,7 +23,7 @@ class PersonalProfile extends Component {
               <li>{user._menteeInterest}</li>
             </ul>
           </span>
-        )}
+      )}
 
     return (
       <div className="profilePage-wrapper">
