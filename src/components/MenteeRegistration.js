@@ -76,7 +76,7 @@ class MenteeRegistration extends Component {
               onChange={this.handleChange}
               required
             /><br/>
-            <button type="submit" className="signupbtn">Submit</button>
+            <button type="submit" className="submit-button">Submit</button>
         </form>
       </div>
     );
