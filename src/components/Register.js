@@ -67,7 +67,7 @@ class Register extends React.Component {
       <div className="clearfix">
       <div className="title-box">
         <h3 id="signup-title">Welcome to MentorBee.</h3>
-        <br/><p id="tagline">Learn the skills you need from experts in the field. <br/>Register with us to learn from the best!</p>
+        <br/><p id="tagline">Help others learn and level up your knowledge. <br/>Join our community today!</p>
       </div>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="name">Name</label>

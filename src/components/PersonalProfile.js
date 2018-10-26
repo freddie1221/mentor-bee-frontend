@@ -5,13 +5,13 @@ class PersonalProfile extends Component {
   render () {
     let user = JSON.parse(window.localStorage.getItem("currentUser"))
     let mentorOrMentee;
-    if (user._mentorBio !== null) {
+    if (user._mentorBio !== "" && user._mentorBio !== null) {
       mentorOrMentee = (
         <span>
           <p>{user._mentorBio}</p>
           <p>Available to mentor in: </p>
           <ul>
-            <li>{user._mentorSkill}</li>
+            <li className="skill-interest">{user._mentorSkill}</li>
           </ul>
         </span>
       )} else {
@@ -20,7 +20,7 @@ class PersonalProfile extends Component {
             <p>{user._menteeBio}</p>
             <p>Looking to gain skills in: </p>
             <ul>
-              <li>{user._menteeInterest}</li>
+              <li className="skill-interest">{user._menteeInterest}</li>
             </ul>
           </span>
       )}

@@ -1,6 +1,5 @@
-import React, { Component } from "react";
-import { withRouter, Redirect } from "react-router-dom";
-import CurrentUser from "../CurrentUser"
+import React from "react";
+import { Redirect } from "react-router-dom";
 
 class SignOut extends React.Component {
 
