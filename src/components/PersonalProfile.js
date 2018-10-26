@@ -5,7 +5,7 @@ class PersonalProfile extends Component {
   render () {
     let user = JSON.parse(window.localStorage.getItem("currentUser"))
     let mentorOrMentee;
-    if (user._mentorBio !== null) {
+    if (user._mentorBio !== "") {
       mentorOrMentee = (
         <span>
           <p>{user._mentorBio}</p>
